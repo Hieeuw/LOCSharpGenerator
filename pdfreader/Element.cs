@@ -172,10 +172,10 @@ namespace pdfreader
             StringBuilder sb = new StringBuilder();
             sb.Append($"\t\tpublic Element{Nummer}({ElementType} val)\r\n");    // Nullable '?' verwijderd
             sb.Append($"\t\t{{\r\n");
-            sb.Append($"\t\t\tthis.element = new ElementNummer(\"{this.Nummer}\", \"{this.Naam}\"/*,len: {this.ElementLength}*/);\r\n");
+            sb.Append($"\t\t\tthis.element = new ElementNummer(\"{this.Nummer}\", \"{this.Naam}\");\r\n");
 
             string _elementwaarde = $"\t\t\tthis.waarde = new ElementWaarde<{ElementType}> {{ Waarde = val @tab }};\r\n"; // Nullable '?' verwijderd
-            _elementwaarde = _elementwaarde.Replace("@tab", this.LandelijkeTabel != null ? $", Omschrijving = Tabel{LandelijkeTabel}.Instance.Omschrijving(val)" : this.Domein.Any() ? $", Omschrijving = Domein[val]" : this.IsDatum ? $", Omschrijving = DatumFormatter.Format(val/*, \"dd-mm-jjjj\"*/)" : null);
+            _elementwaarde = _elementwaarde.Replace("@tab", this.LandelijkeTabel != null ? $", Omschrijving = Tabel{LandelijkeTabel}.Instance.Omschrijving(val)" : this.Domein.Any() ? $", Omschrijving = Domein[val]" : this.IsDatum ? $", Omschrijving = DatumFormatter.Format(val)" : null);
             sb.Append(_elementwaarde);
 
             sb.Append($"\t\t}}\r\n");
