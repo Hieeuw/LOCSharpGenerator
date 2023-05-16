@@ -30,7 +30,7 @@ namespace RaadplegenPLSourceGenerator
 
             public static string Datum => "1 januari 2023";
         }
-        
+
         // Methods
 
         /// <summary>
@@ -130,10 +130,8 @@ namespace RaadplegenPLSourceGenerator
             builder.Append("using System.Diagnostics.CodeAnalysis;\r\n");
             builder.Append("using System.Linq;\r\n");
             builder.Append("using Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DataModel.Transferables;\r\n");
-            builder.Append("using Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.Interfaces;\r\n");
-            builder.Append("using Newtonsoft.Json;\r\n\r\n");
-            builder.Append(
-                "namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.LogischOntwerp\r\n");
+            builder.Append("using Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.Interfaces;\r\n\r\n");
+            builder.Append("namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.LogischOntwerp\r\n");
             builder.Append("{\r\n" + this._CategorieenHist + "}\r\n");
             return builder.ToString();
         }
@@ -192,7 +190,7 @@ namespace RaadplegenPLSourceGenerator
             builder.Append("using System;\r\n");
             builder.Append("using System.Collections.Generic;\r\n");
             builder.Append("using System.Diagnostics.CodeAnalysis;\r\n");
-            builder.Append("using Centric.PIV.Burgerzaken.RaadplegenPL.Common.Logic;\r\n");
+            builder.Append("using Centric.PIV.Burgerzaken.RaadplegenPL.Common.Models;\r\n");
             builder.Append(
                 "using Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.LogischOntwerp.LandelijkeTabellen;\r\n");
             builder.Append("using Newtonsoft.Json;\r\n\r\n");
@@ -249,11 +247,8 @@ namespace RaadplegenPLSourceGenerator
                                           "\r\n//\r\n//\x00a0\x00a0\x00a0 Manual changes to this file may cause unexpected behavior in your application.\r\n//\x00a0\x00a0\x00a0 Manual changes to this file will be overwritten if the code is regenerated.\r\n// </auto-generated>\r\n//------------------------------------------------------------------------------\r\n"
                                       };
             builder.Append(string.Concat(textArray1));
-            builder.Append("using System;\r\n");
             builder.Append("using System.Collections.Generic;\r\n");
             builder.Append("using System.Diagnostics.CodeAnalysis;\r\n");
-            builder.Append("\r\n");
-            builder.Append("using Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.Exceptions;\r\n");
             builder.Append("using Newtonsoft.Json;\r\n\r\n");
             builder.Append(
                 "namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.LogischOntwerp.LandelijkeTabellen\r\n");
@@ -278,7 +273,6 @@ namespace RaadplegenPLSourceGenerator
                                           "\r\n//\r\n//\x00a0\x00a0\x00a0 Manual changes to this file may cause unexpected behavior in your application.\r\n//\x00a0\x00a0\x00a0 Manual changes to this file will be overwritten if the code is regenerated.\r\n// </auto-generated>\r\n//------------------------------------------------------------------------------\r\n"
                                       };
             builder.Append(string.Concat(textArray1));
-            builder.Append("using System;\r\n");
             builder.Append("using System.Diagnostics.CodeAnalysis;\r\n");
             builder.Append("using Newtonsoft.Json;\r\n\r\n");
             builder.Append(
@@ -311,7 +305,6 @@ namespace RaadplegenPLSourceGenerator
                                           "\r\n//\r\n//\x00a0\x00a0\x00a0 Manual changes to this file may cause unexpected behavior in your application.\r\n//\x00a0\x00a0\x00a0 Manual changes to this file will be overwritten if the code is regenerated.\r\n// </auto-generated>\r\n//------------------------------------------------------------------------------\r\n"
                                       };
             builder.Append(string.Concat(textArray1));
-            builder.Append("using System;\r\n");
             builder.Append("using System.Diagnostics.CodeAnalysis;\r\n");
             builder.Append("using Newtonsoft.Json;\r\n\r\n");
             builder.Append(
@@ -559,7 +552,7 @@ namespace RaadplegenPLSourceGenerator
                 }
                 */
                 //foreach (Categorie categorie in this.Categorieen.Where<Categorie>(predicate))
-                foreach (Categorie categorie in this.Categorieen.Where(c => c.HeeftHistorie) )
+                foreach (Categorie categorie in this.Categorieen.Where(c => c.HeeftHistorie))
                 {
                     str = str + categorie.WriteHeeftHist();
                 }
@@ -682,7 +675,7 @@ namespace RaadplegenPLSourceGenerator
     }
 }
 
- 
+
 
 
 

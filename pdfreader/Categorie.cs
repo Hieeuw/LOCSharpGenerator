@@ -75,9 +75,12 @@ namespace pdfreader
         private static IDictionary<string, IList<string>> categorieen =
             new Dictionary<string, IList<string>>
             {
-                    { "Categorie01", new List<string> { $"xprs = new GBA_XTPRSGEG(processor.Process(processor.repo.GetGBA_TPRSREG(rsysprs)))", $"xnam = new GBA_XTNAMREG(processor.Process(processor.repo.GetGBA_TNAMREG(xprs.RsysNam)).Single())", $"xins = new GBA_XTINSREG(processor.Process(processor.repo.GetGBA_TINSREG(xprs.prs.RSYS_PRS)).Single())" } },
-                    { "Categorie02", new List<string> { $"xou1 = new GBA_XTOU1AKT(processor.Process(processor.repo.GetGBA_TOU1AKT(rsysprs)).Single())", $"xnam = new GBA_XTNAMREG(processor.Process(processor.repo.GetGBA_TNAMREG(xou1.ou1.RSYS_NAM)).Single())", $"xprs = new GBA_XTPRSGEG(processor.Process(processor.repo.GetGBA_TPRSGEGBYRSYSNAM(ou1.RSYS_NAM)).Where(p => p.IREG == \"A\").SingleOrDefault())", } },
-                    { "Categorie04", new List<string> { $"xnatakt = processor.Process(processor.repo.GetGBA_TNATAKT(rsysprs)).OrderByDescending(n => n.DGLD).ThenByDescending(n => n.DOPN)" } }
+                    { "Categorie01", new List<string> { $"xPrs = new GBA_XTPRSGEG(processor.Process(processor.repo.GetGBA_TPRSGEG(rsysPrs)).Single())", $"xNam = new GBA_XTNAMREG(processor.Process(processor.repo.GetGBA_TNAMREG(xPrs.RsysNam)).Single())" } },
+                    { "Categorie02", new List<string> { $"xOu1 = new GBA_XTOU1AKT(processor.Process(processor.repo.GetGBA_TOU1AKT(rsysPrs)).Single())", $"xNam = new GBA_XTNAMREG(processor.Process(processor.repo.GetGBA_TNAMREG(rsysPrs)).Single())" } },
+                    { "Categorie03", new List<string> { $"xOu2 = new GBA_XTOU2AKT(processor.Process(processor.repo.GetGBA_TOU2AKT(rsysPrs)).Single())", $"xNam = new GBA_XTNAMREG(processor.Process(processor.repo.GetGBA_TNAMREG(rsysPrs)).Single())" } },
+                    { "Categorie04", new List<string> { $"xNatAkt = processor.Process(processor.repo.GetGBA_TNATAKT(rsysPrs)).OrderByDescending(n => n.DGLD).ThenByDescending(n => n.DOPN)" } },
+                    { "Categorie06", new List<string> { $"xOvlAkt = new GBA_XTOVLAKT(processor.Process(processor.repo.GetGBA_TOVLAKT(rsysPrs)).Single())" } },
+                    { "Categorie07", new List<string> { $"xOvlAkt = new GBA_XTOVLAKT(processor.Process(processor.repo.GetGBA_TOVLAKT(rsysPrs)).Single())" } }
             };
 
 
@@ -168,21 +171,21 @@ namespace pdfreader
             sb.Append($"\t[ExcludeFromCodeCoverage]\r\n");
             sb.Append($"\tpublic class Categorie{Nummer} : Categorie{Nummer}Base, IHistorie\r\n");
             sb.Append($"\t{{\r\n");
-            sb.Append($"\t\tpublic IList<Categorie{Convert.ToInt32(Nummer) + 50}> Historie {{ get; set; }}\r\n");
+            sb.Append($"\t\tpublic IList<Categorie{Convert.ToInt32(Nummer) + 50}> Historie {{ get; set; }}\r\n\r\n");
             sb.Append($"{_Constructor()}");
             sb.Append($"\t}}\r\n\r\n");
             return sb.ToString();
         }
-        
+
         public string _Constructor()
         {
             if (categorieen.ContainsKey($"Categorie{this.Nummer}"))
             {
                 StringBuilder sb = new StringBuilder();
                 sb.Append($"\t\t/// <summary>\r\n");
-                sb.Append($"\t\t/// Constructor\r\n");
+                sb.Append($"\t\t/// Constructor Categorie{Nummer} \r\n");
                 sb.Append($"\t\t/// </summary>\r\n");
-                sb.Append(this.IsMeerdereKerenActueel ? $"\t\tpublic Categorie{this.Nummer}(params ITransferable[] transferables)\r\n" : $"\t\tpublic Categorie{this.Nummer}(long rsysprs)\r\n");
+                sb.Append(this.IsMeerdereKerenActueel ? $"\t\tpublic Categorie{this.Nummer}(params ITransferable[] transferables)\r\n" : $"\t\tpublic Categorie{this.Nummer}(long rsysPrs)\r\n");
                 sb.Append($"\t\t{{\r\n");
 
                 string s = $"\t\t\tvar groepen = new List<Groep>();";
@@ -203,14 +206,15 @@ namespace pdfreader
 
                     sb.Append($"\t\t\tfor (int i=0; i<transferables.Length; i++)\r\n\t\t\t{{\r\n\t\t\t\tgroepen = (List<Groep>)groepen.Concat(transferables[i].Groepen);\r\n\t\t\t}}\r\n");
                 }
+                sb.Append($"\r\n");
 
                 foreach (var groep in this.Groepsopsomming.Where(g => g.Nummer != "84"))
-                    sb.Append($"\t\t\tthis.groep{groep.Nummer} = (Groep{groep.Nummer})groepen.Where(g => g.GetType() == typeof(Groep{groep.Nummer})).SingleOrDefault();\r\n");
+                    sb.Append($"\t\t\tgroep{groep.Nummer} = (Groep{groep.Nummer})groepen.SingleOrDefault(g => g is Groep{groep.Nummer});\r\n");
 
                 sb.Append($"\t\t}}\r\n");
                 return sb.ToString();
             }
-            else {return string.Empty;}
+            else { return string.Empty; }
         }
 
         public string WriteZonderHist()
