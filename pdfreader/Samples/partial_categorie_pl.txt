@@ -1,0 +1,69 @@
+GBA_TNAMREG.RADM => element0110
+GBA_TNAMREG.RSOFI => element0120
+
+
+public partial class GBA_TNAMREG
+{
+	public Element0110 element0110 => new Element0110(this.RADM);
+	
+	public Element0210 element0210 => this.ZVOOR == null ? NVOOR : TeletexHelper.ToUnicode(NVOOR, ZVOOR);
+	
+	public Element0240 element0240 => new Element0240(TeletexHelper.ToUnicode(this.NGSL, this.ZGSL));
+	
+	public Element0310 element0310 => new Element0310(this.DGBEB_GBA);
+	
+	public Element0320 element0320 =>
+            NPLT_GEB != null
+            ? ZPLT_GEB != null ? new Element0320(TeletexHelper.ToUnicode(this.NPLT_GEB, this.ZPLT_GEB)) : new Element0320(this.NPLT_GEB)
+            : KGEM_GEB == null ? null : new Element0320(this.KGEM_GEB);
+	enz..
+	
+	
+	... of zelfs dit:
+	public Groep03 groep03 => new Groep03{element0310 = this.element0320, element0320 = this.element0320};
+}
+
+
+
+
+
+
+
+public partial class Categorie01 : Categorie01Base
+{
+	private GBA_TNAMREG namreg;
+	
+	public Categorie01(long rsysprs)
+	{
+		namreg = IQProcessor.Process(repo.GetGBA_TNAMREG(rsysprs));
+		
+		
+		this.groep02 = new Groep02{element0210 = nam.element0210, element0240 = nam.element0240, ...};
+		this.groep03 = new Groep03{element0310 = nam.element0310, element0320 = nam.element0320, ...};
+		.
+		.
+		.
+		this.groep61 = ...
+		
+		of: this.groep03 = nam.Groep03;
+		
+		// historie ophalen en op categorie01.Historie plaatsen
+	}
+}
+
+public class PersoonsLijst
+{
+	public Categorie01 categorie01;
+	.
+	.
+	.
+	
+	public PersoonsLijst(XDocument BRPVRequest)
+	{
+	}
+	
+	public PersoonsLijst(IdentificatiePersoon id)
+	{
+		this.categorie01 = new Categorie01(id);
+	}
+}

@@ -1,0 +1,45 @@
+public class Categorieen04
+{
+	public IList<GBA_XTNATAKT> xtnataks;
+	
+	public IList<Categorie04> Categorieen;
+	
+	public Categorieen04()
+	{
+		// hier voer je de query uit die xnatakts vult. Voor elke nationaliteit is er 1 item in xtnataks.
+		// het is van groot belang dat de query de nationaliteiten in de juiste volgorde ophaalt. 
+		// de query vind je in Categorie04Builder (oude project):
+		//
+		/*
+		var natakt = processor.Process(QMagazijn.GetTNATAKT(rsysprs))
+                .OrderByDescending(n => n.DGLD)
+                .ThenByDescending(n => n.DOPN);
+		*/
+		// deze query levert een IEnumerable<GBA_TNATAKT> op, dus
+		foreach ( var _natakt in natakt )
+			xnatakts.Add(new GBA_XTNATAKT(_natakt));
+		
+		foreach ( var _natakt in natakt )
+		{
+			Categorieen.Add(new Categorie04(new GBA_XTNATAKT(_natakt)
+		}
+	}
+}
+
+Later wordt de PL:
+{
+	Categorie01 categorie01;
+	Categorie02 categorie02;
+	.
+	.
+	.
+	IList<Categorie04> categorie04;
+	
+	
+	categorie01 = new Categorie01();
+	categorie02 = new Categorie02();
+	.
+	.
+	.
+	categorie04 = new Categorieen04().Categorieen;
+}
