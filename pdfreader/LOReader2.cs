@@ -534,10 +534,17 @@ namespace RaadplegenPLSourceGenerator
                     str = str + categorie.Write();
                 }
 
+                foreach (Categorie categorie in this.Categorieen.Where(c => c.IsMeerdereKerenActueel))
+                {
+                    str += categorie.WriteMeerdereKerenActueel();
+                }
+
                 return str;
             }
         }
 
+        
+        
         private string _CategorieenHist
         {
             get

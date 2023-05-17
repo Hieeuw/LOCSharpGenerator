@@ -934,4 +934,40 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 		public Groep86 groep86 { get; set; }
 	}
 
+	/// <summary>
+	/// Representeert een lijst van Categorie04-instanties (Nationaliteit)
+	/// </summary>
+	[ExcludeFromCodeCoverage]
+	public class Categorieen04 : CategorieBase
+	{
+		public IList<Categorie04> Categorieen = new List<Categorie04>();
+
+		public Categorieen04(long rsysPrs)
+		{
+			var xList = processor.Process(processor.repo.GetGBA_TNATAKT(rsysPrs)).OrderByDescending(n => n.DGLD).ThenByDescending(n => n.DOPN);
+			foreach (var x in xList)
+			{
+				var categorie04 = new Categorie04(new GBA_XTNATAKT(x));
+				this.Categorieen.Add(categorie04);
+			}
+		}
+	}
+	/// <summary>
+	/// Representeert een lijst van Categorie05-instanties (Huwelijk/geregistreerd)
+	/// </summary>
+	[ExcludeFromCodeCoverage]
+	public class Categorieen05 : CategorieBase
+	{
+		public IList<Categorie05> Categorieen = new List<Categorie05>();
+
+		public Categorieen05(long rsysPrs)
+		{
+			var xList = processor.Process(QMagazijn.GetTHUWAKT(rsysprs)).OrderByDescending(huw => huw.DGLD).ThenByDescending(huw => huw.DOPN).ThenBy(huw => huw.RVLG_HW);
+			foreach (var x in xList)
+			{
+				var categorie05 = new Categorie05(new GBA_XTHUWAKT(x));
+				this.Categorieen.Add(categorie05);
+			}
+		}
+	}
 }
