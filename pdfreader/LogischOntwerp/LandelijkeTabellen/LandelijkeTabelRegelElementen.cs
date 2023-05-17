@@ -17,10 +17,11 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	[ExcludeFromCodeCoverage]
 	public partial class Element0511 : Element<Int16>
 	{
-		public Element0511(Int16 val)
+		private Element0511() => this.element = new ElementNummer(nummer: "0511", naam: "Nationaliteitscode");
+		public Element0511(Int16 val) : this() => this.waarde = new ElementWaarde<Int16> { Waarde = val };
+		public Element0511(string val) : this()
 		{
-			this.element = new ElementNummer("0511", "Nationaliteitscode");
-			this.waarde = new ElementWaarde<Int16> { Waarde = val };
+			if (val.Length > 0) this.waarde = new ElementWaarde<Int16> { Waarde = Convert.ToInt16(val) };
 		}
 	}
 
@@ -30,10 +31,10 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	[ExcludeFromCodeCoverage]
 	public partial class Element0512 : Element<String>
 	{
-		public Element0512(String val)
+		private Element0512() => this.element = new ElementNummer(nummer: "0512", naam: "Officiële omschrijving nationaliteit");
+		public Element0512(string val) : this()
 		{
-			this.element = new ElementNummer("0512", "Officiële omschrijving nationaliteit");
-			this.waarde = new ElementWaarde<String> { Waarde = val };
+			if (val.Length > 0) this.waarde = new ElementWaarde<String> { Waarde = Convert.ToString(val) };
 		}
 	}
 
@@ -43,10 +44,11 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	[ExcludeFromCodeCoverage]
 	public partial class Element9998 : Element<Int32>
 	{
-		public Element9998(Int32 val)
+		private Element9998() => this.element = new ElementNummer(nummer: "9998", naam: "Datum ingang tabelregel");
+		public Element9998(Int32 val) : this() => this.waarde = new ElementWaarde<Int32> { Waarde = val };
+		public Element9998(string val) : this()
 		{
-			this.element = new ElementNummer("9998", "Datum ingang tabelregel");
-			this.waarde = new ElementWaarde<Int32> { Waarde = val };
+			if (val.Length > 0) this.waarde = new ElementWaarde<Int32> { Waarde = Convert.ToInt32(val) };
 		}
 	}
 
@@ -56,10 +58,11 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	[ExcludeFromCodeCoverage]
 	public partial class Element9999 : Element<Int32>
 	{
-		public Element9999(Int32 val)
+		private Element9999() => this.element = new ElementNummer(nummer: "9999", naam: "Datum beëindiging tabelregel");
+		public Element9999(Int32 val) : this() => this.waarde = new ElementWaarde<Int32> { Waarde = val };
+		public Element9999(string val) : this()
 		{
-			this.element = new ElementNummer("9999", "Datum beëindiging tabelregel");
-			this.waarde = new ElementWaarde<Int32> { Waarde = val };
+			if (val.Length > 0) this.waarde = new ElementWaarde<Int32> { Waarde = Convert.ToInt32(val) };
 		}
 	}
 
@@ -69,10 +72,11 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	[ExcludeFromCodeCoverage]
 	public partial class Element9210 : Element<string>
 	{
-		public Element9210(string val)
+		private Element9210() => this.element = new ElementNummer(nummer: "9210", naam: "Gemeentecode");
+		public Element9210(Int16 val) : this() => this.waarde = new ElementWaarde<Int16> { Waarde = val };
+		public Element9210(string val) : this()
 		{
-			this.element = new ElementNummer("9210", "Gemeentecode");
-			this.waarde = new ElementWaarde<string> { Waarde = val };
+			if (val.Length > 0) this.waarde = new ElementWaarde<Int16> { Waarde = Convert.ToInt16(val) };
 		}
 	}
 
@@ -82,10 +86,10 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	[ExcludeFromCodeCoverage]
 	public partial class Element9211 : Element<String>
 	{
-		public Element9211(String val)
+		private Element9211() => this.element = new ElementNummer(nummer: "9211", naam: "Officiële gemeentenaam");
+		public Element9211(string val) : this()
 		{
-			this.element = new ElementNummer("9211", "Officiële gemeentenaam");
-			this.waarde = new ElementWaarde<String> { Waarde = val };
+			if (val.Length > 0) this.waarde = new ElementWaarde<String> { Waarde = Convert.ToString(val) };
 		}
 	}
 
@@ -95,10 +99,11 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	[ExcludeFromCodeCoverage]
 	public partial class Element9212 : Element<Int16>
 	{
-		public Element9212(Int16 val)
+		private Element9212() => this.element = new ElementNummer(nummer: "9212", naam: "Nieuwe gemeentecode");
+		public Element9212(Int16 val) : this() => this.waarde = new ElementWaarde<Int16> { Waarde = val };
+		public Element9212(string val) : this()
 		{
-			this.element = new ElementNummer("9212", "Nieuwe gemeentecode");
-			this.waarde = new ElementWaarde<Int16> { Waarde = val };
+			if (val.Length > 0) this.waarde = new ElementWaarde<Int16> { Waarde = Convert.ToInt16(val) };
 		}
 	}
 
@@ -108,10 +113,11 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	[ExcludeFromCodeCoverage]
 	public partial class Element9410 : Element<Int16>
 	{
-		public Element9410(Int16 val)
+		private Element9410() => this.element = new ElementNummer(nummer: "9410", naam: "Landcode");
+		public Element9410(Int16 val) : this() => this.waarde = new ElementWaarde<Int16> { Waarde = val };
+		public Element9410(string val) : this()
 		{
-			this.element = new ElementNummer("9410", "Landcode");
-			this.waarde = new ElementWaarde<Int16> { Waarde = val };
+			if (val.Length > 0) this.waarde = new ElementWaarde<Int16> { Waarde = Convert.ToInt16(val) };
 		}
 	}
 
@@ -121,10 +127,10 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	[ExcludeFromCodeCoverage]
 	public partial class Element9411 : Element<String>
 	{
-		public Element9411(String val)
+		private Element9411() => this.element = new ElementNummer(nummer: "9411", naam: "Officiële landnaam");
+		public Element9411(string val) : this()
 		{
-			this.element = new ElementNummer("9411", "Officiële landnaam");
-			this.waarde = new ElementWaarde<String> { Waarde = val };
+			if (val.Length > 0) this.waarde = new ElementWaarde<String> { Waarde = Convert.ToString(val) };
 		}
 	}
 
@@ -134,10 +140,10 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	[ExcludeFromCodeCoverage]
 	public partial class Element0231 : Element<String>
 	{
-		public Element0231(String val)
+		private Element0231() => this.element = new ElementNummer(nummer: "0231", naam: "Voorvoegsel");
+		public Element0231(string val) : this()
 		{
-			this.element = new ElementNummer("0231", "Voorvoegsel");
-			this.waarde = new ElementWaarde<String> { Waarde = val };
+			if (val.Length > 0) this.waarde = new ElementWaarde<String> { Waarde = Convert.ToString(val) };
 		}
 	}
 
@@ -147,10 +153,11 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	[ExcludeFromCodeCoverage]
 	public partial class Element9610 : Element<Int16>
 	{
-		public Element9610(Int16 val)
+		private Element9610() => this.element = new ElementNummer(nummer: "9610", naam: "Reden opnemen/beëindigen nationaliteit");
+		public Element9610(Int16 val) : this() => this.waarde = new ElementWaarde<Int16> { Waarde = val };
+		public Element9610(string val) : this()
 		{
-			this.element = new ElementNummer("9610", "Reden opnemen/beëindigen nationaliteit");
-			this.waarde = new ElementWaarde<Int16> { Waarde = val };
+			if (val.Length > 0) this.waarde = new ElementWaarde<Int16> { Waarde = Convert.ToInt16(val) };
 		}
 	}
 
@@ -160,10 +167,10 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	[ExcludeFromCodeCoverage]
 	public partial class Element9620 : Element<String>
 	{
-		public Element9620(String val)
+		private Element9620() => this.element = new ElementNummer(nummer: "9620", naam: "Omschrijving");
+		public Element9620(string val) : this()
 		{
-			this.element = new ElementNummer("9620", "Omschrijving");
-			this.waarde = new ElementWaarde<String> { Waarde = val };
+			if (val.Length > 0) this.waarde = new ElementWaarde<String> { Waarde = Convert.ToString(val) };
 		}
 	}
 
@@ -173,10 +180,10 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	[ExcludeFromCodeCoverage]
 	public partial class Element9630 : Element<String>
 	{
-		public Element9630(String val)
+		private Element9630() => this.element = new ElementNummer(nummer: "9630", naam: "Soort");
+		public Element9630(string val) : this()
 		{
-			this.element = new ElementNummer("9630", "Soort");
-			this.waarde = new ElementWaarde<String> { Waarde = val };
+			if (val.Length > 0) this.waarde = new ElementWaarde<String> { Waarde = Convert.ToString(val) };
 		}
 	}
 
@@ -186,10 +193,10 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	[ExcludeFromCodeCoverage]
 	public partial class Element0221 : Element<String>
 	{
-		public Element0221(String val)
+		private Element0221() => this.element = new ElementNummer(nummer: "0221", naam: "Adellijke titel/predicaat");
+		public Element0221(string val) : this()
 		{
-			this.element = new ElementNummer("0221", "Adellijke titel/predicaat");
-			this.waarde = new ElementWaarde<String> { Waarde = val };
+			if (val.Length > 0) this.waarde = new ElementWaarde<String> { Waarde = Convert.ToString(val) };
 		}
 	}
 
@@ -199,10 +206,10 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	[ExcludeFromCodeCoverage]
 	public partial class Element0222 : Element<String>
 	{
-		public Element0222(String val)
+		private Element0222() => this.element = new ElementNummer(nummer: "0222", naam: "Omschrijving adellijke titel/predicaat");
+		public Element0222(string val) : this()
 		{
-			this.element = new ElementNummer("0222", "Omschrijving adellijke titel/predicaat");
-			this.waarde = new ElementWaarde<String> { Waarde = val };
+			if (val.Length > 0) this.waarde = new ElementWaarde<String> { Waarde = Convert.ToString(val) };
 		}
 	}
 
@@ -212,10 +219,10 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	[ExcludeFromCodeCoverage]
 	public partial class Element0223 : Element<String>
 	{
-		public Element0223(String val)
+		private Element0223() => this.element = new ElementNummer(nummer: "0223", naam: "Soort");
+		public Element0223(string val) : this()
 		{
-			this.element = new ElementNummer("0223", "Soort");
-			this.waarde = new ElementWaarde<String> { Waarde = val };
+			if (val.Length > 0) this.waarde = new ElementWaarde<String> { Waarde = Convert.ToString(val) };
 		}
 	}
 
@@ -225,10 +232,10 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	[ExcludeFromCodeCoverage]
 	public partial class Element8121 : Element<String>
 	{
-		public Element8121(String val)
+		private Element8121() => this.element = new ElementNummer(nummer: "8121", naam: "Akteaanduiding");
+		public Element8121(string val) : this()
 		{
-			this.element = new ElementNummer("8121", "Akteaanduiding");
-			this.waarde = new ElementWaarde<String> { Waarde = val };
+			if (val.Length > 0) this.waarde = new ElementWaarde<String> { Waarde = Convert.ToString(val) };
 		}
 	}
 
@@ -238,10 +245,10 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	[ExcludeFromCodeCoverage]
 	public partial class Element8122 : Element<String>
 	{
-		public Element8122(String val)
+		private Element8122() => this.element = new ElementNummer(nummer: "8122", naam: "Omschrijving soort akte");
+		public Element8122(string val) : this()
 		{
-			this.element = new ElementNummer("8122", "Omschrijving soort akte");
-			this.waarde = new ElementWaarde<String> { Waarde = val };
+			if (val.Length > 0) this.waarde = new ElementWaarde<String> { Waarde = Convert.ToString(val) };
 		}
 	}
 
@@ -251,10 +258,10 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	[ExcludeFromCodeCoverage]
 	public partial class Element0741 : Element<String>
 	{
-		public Element0741(String val)
+		private Element0741() => this.element = new ElementNummer(nummer: "0741", naam: "Reden ontbinding/nietigverklaring huwelijk/geregistreerd");
+		public Element0741(string val) : this()
 		{
-			this.element = new ElementNummer("0741", "Reden ontbinding/nietigverklaring huwelijk/geregistreerd");
-			this.waarde = new ElementWaarde<String> { Waarde = val };
+			if (val.Length > 0) this.waarde = new ElementWaarde<String> { Waarde = Convert.ToString(val) };
 		}
 	}
 
@@ -264,10 +271,10 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	[ExcludeFromCodeCoverage]
 	public partial class Element0742 : Element<String>
 	{
-		public Element0742(String val)
+		private Element0742() => this.element = new ElementNummer(nummer: "0742", naam: "Omschrijving");
+		public Element0742(string val) : this()
 		{
-			this.element = new ElementNummer("0742", "Omschrijving");
-			this.waarde = new ElementWaarde<String> { Waarde = val };
+			if (val.Length > 0) this.waarde = new ElementWaarde<String> { Waarde = Convert.ToString(val) };
 		}
 	}
 
@@ -277,10 +284,10 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	[ExcludeFromCodeCoverage]
 	public partial class Element3511 : Element<String>
 	{
-		public Element3511(String val)
+		private Element3511() => this.element = new ElementNummer(nummer: "3511", naam: "Nederlands reisdocument");
+		public Element3511(string val) : this()
 		{
-			this.element = new ElementNummer("3511", "Nederlands reisdocument");
-			this.waarde = new ElementWaarde<String> { Waarde = val };
+			if (val.Length > 0) this.waarde = new ElementWaarde<String> { Waarde = Convert.ToString(val) };
 		}
 	}
 
@@ -290,10 +297,10 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	[ExcludeFromCodeCoverage]
 	public partial class Element3512 : Element<String>
 	{
-		public Element3512(String val)
+		private Element3512() => this.element = new ElementNummer(nummer: "3512", naam: "Omschrijving");
+		public Element3512(string val) : this()
 		{
-			this.element = new ElementNummer("3512", "Omschrijving");
-			this.waarde = new ElementWaarde<String> { Waarde = val };
+			if (val.Length > 0) this.waarde = new ElementWaarde<String> { Waarde = Convert.ToString(val) };
 		}
 	}
 
@@ -303,10 +310,10 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	[ExcludeFromCodeCoverage]
 	public partial class Element3541 : Element<String>
 	{
-		public Element3541(String val)
+		private Element3541() => this.element = new ElementNummer(nummer: "3541", naam: "Autoriteit van afgifte");
+		public Element3541(string val) : this()
 		{
-			this.element = new ElementNummer("3541", "Autoriteit van afgifte");
-			this.waarde = new ElementWaarde<String> { Waarde = val };
+			if (val.Length > 0) this.waarde = new ElementWaarde<String> { Waarde = Convert.ToString(val) };
 		}
 	}
 
@@ -316,10 +323,10 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	[ExcludeFromCodeCoverage]
 	public partial class Element3542 : Element<String>
 	{
-		public Element3542(String val)
+		private Element3542() => this.element = new ElementNummer(nummer: "3542", naam: "Omschrijving");
+		public Element3542(string val) : this()
 		{
-			this.element = new ElementNummer("3542", "Omschrijving");
-			this.waarde = new ElementWaarde<String> { Waarde = val };
+			if (val.Length > 0) this.waarde = new ElementWaarde<String> { Waarde = Convert.ToString(val) };
 		}
 	}
 
@@ -329,10 +336,11 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	[ExcludeFromCodeCoverage]
 	public partial class Element3911 : Element<Int16>
 	{
-		public Element3911(Int16 val)
+		private Element3911() => this.element = new ElementNummer(nummer: "3911", naam: "Verblijfstitel");
+		public Element3911(Int16 val) : this() => this.waarde = new ElementWaarde<Int16> { Waarde = val };
+		public Element3911(string val) : this()
 		{
-			this.element = new ElementNummer("3911", "Verblijfstitel");
-			this.waarde = new ElementWaarde<Int16> { Waarde = val };
+			if (val.Length > 0) this.waarde = new ElementWaarde<Int16> { Waarde = Convert.ToInt16(val) };
 		}
 	}
 
@@ -342,10 +350,10 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	[ExcludeFromCodeCoverage]
 	public partial class Element3912 : Element<String>
 	{
-		public Element3912(String val)
+		private Element3912() => this.element = new ElementNummer(nummer: "3912", naam: "Omschrijving");
+		public Element3912(string val) : this()
 		{
-			this.element = new ElementNummer("3912", "Omschrijving");
-			this.waarde = new ElementWaarde<String> { Waarde = val };
+			if (val.Length > 0) this.waarde = new ElementWaarde<String> { Waarde = Convert.ToString(val) };
 		}
 	}
 
@@ -355,10 +363,11 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	[ExcludeFromCodeCoverage]
 	public partial class Element8811 : Element<Int16>
 	{
-		public Element8811(Int16 val)
+		private Element8811() => this.element = new ElementNummer(nummer: "8811", naam: "Code RNI-deelnemer");
+		public Element8811(Int16 val) : this() => this.waarde = new ElementWaarde<Int16> { Waarde = val };
+		public Element8811(string val) : this()
 		{
-			this.element = new ElementNummer("8811", "Code RNI-deelnemer");
-			this.waarde = new ElementWaarde<Int16> { Waarde = val };
+			if (val.Length > 0) this.waarde = new ElementWaarde<Int16> { Waarde = Convert.ToInt16(val) };
 		}
 	}
 
@@ -368,10 +377,10 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	[ExcludeFromCodeCoverage]
 	public partial class Element8812 : Element<String>
 	{
-		public Element8812(String val)
+		private Element8812() => this.element = new ElementNummer(nummer: "8812", naam: "Omschrijving RNI-deelnemer");
+		public Element8812(string val) : this()
 		{
-			this.element = new ElementNummer("8812", "Omschrijving RNI-deelnemer");
-			this.waarde = new ElementWaarde<String> { Waarde = val };
+			if (val.Length > 0) this.waarde = new ElementWaarde<String> { Waarde = Convert.ToString(val) };
 		}
 	}
 
@@ -381,10 +390,10 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	[ExcludeFromCodeCoverage]
 	public partial class Element3211 : Element<String>
 	{
-		public Element3211(String val)
+		private Element3211() => this.element = new ElementNummer(nummer: "3211", naam: "Gezagsverhouding");
+		public Element3211(string val) : this()
 		{
-			this.element = new ElementNummer("3211", "Gezagsverhouding");
-			this.waarde = new ElementWaarde<String> { Waarde = val };
+			if (val.Length > 0) this.waarde = new ElementWaarde<String> { Waarde = Convert.ToString(val) };
 		}
 	}
 
@@ -394,10 +403,10 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	[ExcludeFromCodeCoverage]
 	public partial class Element3212 : Element<String>
 	{
-		public Element3212(String val)
+		private Element3212() => this.element = new ElementNummer(nummer: "3212", naam: "Omschrijving");
+		public Element3212(string val) : this()
 		{
-			this.element = new ElementNummer("3212", "Omschrijving");
-			this.waarde = new ElementWaarde<String> { Waarde = val };
+			if (val.Length > 0) this.waarde = new ElementWaarde<String> { Waarde = Convert.ToString(val) };
 		}
 	}
 }

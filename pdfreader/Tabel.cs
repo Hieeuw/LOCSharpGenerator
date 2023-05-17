@@ -98,17 +98,38 @@ namespace pdfreader
             private string GetConstructor()
             {
                 StringBuilder sb = new StringBuilder();
-                sb.Append($"\t\tpublic Element{this.Nummer}({(this.Nummer == "9210" ? "string" : this.DotNetType.Name)} val)\r\n");
-                sb.Append($"\t\t{{\r\n");
-                sb.Append($"\t\t\tthis.element = new ElementNummer(\"{this.Nummer}\", \"{this.Naam}\");\r\n");
+                //sb.Append($"\t\tpublic Element{this.Nummer}({(this.Nummer == "9210" ? "string" : this.DotNetType.Name)} val)\r\n");
+                //sb.Append($"\t\t{{\r\n");
+                //sb.Append($"\t\t\tthis.element = new ElementNummer(\"{this.Nummer}\", \"{this.Naam}\");\r\n");
 
-                string _elementwaarde = $"\t\t\tthis.waarde = new ElementWaarde<{(this.Nummer == "9210" ? "string" : this.DotNetType.Name)}> {{ Waarde = val }};\r\n";
-                sb.Append(_elementwaarde);
+                //string _elementwaarde = $"\t\t\tthis.waarde = new ElementWaarde<{(this.Nummer == "9210" ? "string" : this.DotNetType.Name)}> {{ Waarde = val }};\r\n";
+                //sb.Append(_elementwaarde);
 
-                sb.Append($"\t\t}}\r\n");
+                //sb.Append($"\t\t}}\r\n");
+
+                sb.Append(this.PrivateConstructor());
+                sb.Append(this.TypedConstructor());
+                sb.Append(this.StringConstructor());
 
                 return sb.ToString();
             }
+
+            private string PrivateConstructor() =>
+                $"\t\tprivate Element{this.Nummer}() => this.element = new ElementNummer(nummer: \"{Nummer}\", naam: \"{Naam}\");\r\n";
+
+            private string TypedConstructor()
+            {
+                if (this.DotNetType != typeof(string))
+                    return $"\t\tpublic Element{this.Nummer}({this.DotNetType.Name} val) : this() => this.waarde = new ElementWaarde<{this.DotNetType.Name}> {{ Waarde = val }};\r\n";
+                return string.Empty;
+            }
+
+            private string StringConstructor()
+            {
+                return
+                    $"\t\tpublic Element{this.Nummer}(string val) : this()\r\n\t\t{{\r\n\t\t\tif (val.Length > 0) this.waarde = new ElementWaarde<{this.DotNetType.Name}> {{ Waarde = Convert.To{this.DotNetType.Name}(val) }};\r\n\t\t}}\r\n";
+            }
+            
         }
 
 
@@ -197,10 +218,17 @@ namespace pdfreader
             sb.Append($"\t\t\tstring[] columns = rgl.Split(new char[] {{ \'•\' }}, StringSplitOptions.None);\r\n");
             for (int i = 0; i < this.ElementOpsomming.Count; i++)
             {
+                /*
                 var _element = this.ElementOpsomming[i];
                 var assignment = _element.Nummer == "9210" ? $"columns[{i}]" : _element.Type == "Numeriek" ? $"System.Convert.To{_element.DotNetType.Name}(columns[{i}])" : $"columns[{i}]";
                 sb.Append(
                     $"\t\t\telement{this.ElementOpsomming[i].Nummer} = new Element{this.ElementOpsomming[i].Nummer}({assignment});\r\n");
+                */
+                var _element = this.ElementOpsomming[i];
+                var assignment = $"columns[{i}]";
+                sb.Append(
+                    $"\t\t\telement{this.ElementOpsomming[i].Nummer} = new Element{this.ElementOpsomming[i].Nummer}({assignment});\r\n");
+
             }
             sb.Append($"\t\t}}\r\n");
 

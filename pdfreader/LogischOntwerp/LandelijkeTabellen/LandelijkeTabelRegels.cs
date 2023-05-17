@@ -57,10 +57,10 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 		public Tabelregel32(string rgl)
 		{
 			string[] columns = rgl.Split(new char[] { '•' }, StringSplitOptions.None);
-			element0511 = new Element0511(System.Convert.ToInt16(columns[0]));
+			element0511 = new Element0511(columns[0]);
 			element0512 = new Element0512(columns[1]);
-			element9998 = new Element9998(System.Convert.ToInt32(columns[2]));
-			element9999 = new Element9999(System.Convert.ToInt32(columns[3]));
+			element9998 = new Element9998(columns[2]);
+			element9999 = new Element9999(columns[3]);
 		}
 
 	}
@@ -119,9 +119,9 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 			string[] columns = rgl.Split(new char[] { '•' }, StringSplitOptions.None);
 			element9210 = new Element9210(columns[0]);
 			element9211 = new Element9211(columns[1]);
-			element9212 = new Element9212(System.Convert.ToInt16(columns[2]));
-			element9998 = new Element9998(System.Convert.ToInt32(columns[3]));
-			element9999 = new Element9999(System.Convert.ToInt32(columns[4]));
+			element9212 = new Element9212(columns[2]);
+			element9998 = new Element9998(columns[3]);
+			element9999 = new Element9999(columns[4]);
 		}
 
 	}
@@ -171,10 +171,10 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 		public Tabelregel34(string rgl)
 		{
 			string[] columns = rgl.Split(new char[] { '•' }, StringSplitOptions.None);
-			element9410 = new Element9410(System.Convert.ToInt16(columns[0]));
+			element9410 = new Element9410(columns[0]);
 			element9411 = new Element9411(columns[1]);
-			element9998 = new Element9998(System.Convert.ToInt32(columns[2]));
-			element9999 = new Element9999(System.Convert.ToInt32(columns[3]));
+			element9998 = new Element9998(columns[2]);
+			element9999 = new Element9999(columns[3]);
 		}
 
 	}
@@ -260,11 +260,11 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 		public Tabelregel37(string rgl)
 		{
 			string[] columns = rgl.Split(new char[] { '•' }, StringSplitOptions.None);
-			element9610 = new Element9610(System.Convert.ToInt16(columns[0]));
+			element9610 = new Element9610(columns[0]);
 			element9620 = new Element9620(columns[1]);
 			element9630 = new Element9630(columns[2]);
-			element9998 = new Element9998(System.Convert.ToInt32(columns[3]));
-			element9999 = new Element9999(System.Convert.ToInt32(columns[4]));
+			element9998 = new Element9998(columns[3]);
+			element9999 = new Element9999(columns[4]);
 		}
 
 	}
@@ -398,8 +398,8 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 			string[] columns = rgl.Split(new char[] { '•' }, StringSplitOptions.None);
 			element0741 = new Element0741(columns[0]);
 			element0742 = new Element0742(columns[1]);
-			element9998 = new Element9998(System.Convert.ToInt32(columns[2]));
-			element9999 = new Element9999(System.Convert.ToInt32(columns[3]));
+			element9998 = new Element9998(columns[2]);
+			element9999 = new Element9999(columns[3]);
 		}
 
 	}
@@ -451,8 +451,8 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 			string[] columns = rgl.Split(new char[] { '•' }, StringSplitOptions.None);
 			element3511 = new Element3511(columns[0]);
 			element3512 = new Element3512(columns[1]);
-			element9998 = new Element9998(System.Convert.ToInt32(columns[2]));
-			element9999 = new Element9999(System.Convert.ToInt32(columns[3]));
+			element9998 = new Element9998(columns[2]);
+			element9999 = new Element9999(columns[3]);
 		}
 
 	}
@@ -504,8 +504,8 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 			string[] columns = rgl.Split(new char[] { '•' }, StringSplitOptions.None);
 			element3541 = new Element3541(columns[0]);
 			element3542 = new Element3542(columns[1]);
-			element9998 = new Element9998(System.Convert.ToInt32(columns[2]));
-			element9999 = new Element9999(System.Convert.ToInt32(columns[3]));
+			element9998 = new Element9998(columns[2]);
+			element9999 = new Element9999(columns[3]);
 		}
 
 	}
@@ -555,10 +555,10 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 		public Tabelregel56(string rgl)
 		{
 			string[] columns = rgl.Split(new char[] { '•' }, StringSplitOptions.None);
-			element3911 = new Element3911(System.Convert.ToInt16(columns[0]));
+			element3911 = new Element3911(columns[0]);
 			element3912 = new Element3912(columns[1]);
-			element9998 = new Element9998(System.Convert.ToInt32(columns[2]));
-			element9999 = new Element9999(System.Convert.ToInt32(columns[3]));
+			element9998 = new Element9998(columns[2]);
+			element9999 = new Element9999(columns[3]);
 		}
 
 	}
@@ -608,10 +608,10 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 		public Tabelregel60(string rgl)
 		{
 			string[] columns = rgl.Split(new char[] { '•' }, StringSplitOptions.None);
-			element8811 = new Element8811(System.Convert.ToInt16(columns[0]));
+			element8811 = new Element8811(columns[0]);
 			element8812 = new Element8812(columns[1]);
-			element9998 = new Element9998(System.Convert.ToInt32(columns[2]));
-			element9999 = new Element9999(System.Convert.ToInt32(columns[3]));
+			element9998 = new Element9998(columns[2]);
+			element9999 = new Element9999(columns[3]);
 		}
 
 	}
@@ -663,8 +663,8 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 			string[] columns = rgl.Split(new char[] { '•' }, StringSplitOptions.None);
 			element3211 = new Element3211(columns[0]);
 			element3212 = new Element3212(columns[1]);
-			element9998 = new Element9998(System.Convert.ToInt32(columns[2]));
-			element9999 = new Element9999(System.Convert.ToInt32(columns[3]));
+			element9998 = new Element9998(columns[2]);
+			element9999 = new Element9999(columns[3]);
 		}
 
 	}
