@@ -5,6 +5,8 @@ VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaadplegenPLSourceGenerator", "pdfreader\RaadplegenPLSourceGenerator.csproj", "{D7DE22D3-BC0A-416E-B6E9-603822539BA3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaadplegenPLEntityWriter", "RaadplegenPLEntityWriter\RaadplegenPLEntityWriter.csproj", "{FEEA7C7D-1C52-471E-BA04-A82406185800}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|anycpu = Debug|anycpu
@@ -15,6 +17,10 @@ Global
 		{D7DE22D3-BC0A-416E-B6E9-603822539BA3}.Debug|anycpu.Build.0 = Debug|Any CPU
 		{D7DE22D3-BC0A-416E-B6E9-603822539BA3}.Release|anycpu.ActiveCfg = Release|anycpu
 		{D7DE22D3-BC0A-416E-B6E9-603822539BA3}.Release|anycpu.Build.0 = Release|anycpu
+		{FEEA7C7D-1C52-471E-BA04-A82406185800}.Debug|anycpu.ActiveCfg = Debug|Any CPU
+		{FEEA7C7D-1C52-471E-BA04-A82406185800}.Debug|anycpu.Build.0 = Debug|Any CPU
+		{FEEA7C7D-1C52-471E-BA04-A82406185800}.Release|anycpu.ActiveCfg = Release|Any CPU
+		{FEEA7C7D-1C52-471E-BA04-A82406185800}.Release|anycpu.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

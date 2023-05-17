@@ -24,7 +24,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element0110(Int64 val)
 		{
-			this.element = new ElementNummer("0110", "A-nummer"/*,len: 10*/);
+			this.element = new ElementNummer("0110", "A-nummer");
 			this.waarde = new ElementWaarde<Int64> { Waarde = val  };
 		}
 	}
@@ -38,7 +38,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element0120(Int32 val)
 		{
-			this.element = new ElementNummer("0120", "Burgerservicenummer"/*,len: 9*/);
+			this.element = new ElementNummer("0120", "Burgerservicenummer");
 			this.waarde = new ElementWaarde<Int32> { Waarde = val  };
 		}
 	}
@@ -52,7 +52,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element0210(String val)
 		{
-			this.element = new ElementNummer("0210", "Voornamen"/*,len: 200*/);
+			this.element = new ElementNummer("0210", "Voornamen");
 			this.waarde = new ElementWaarde<String> { Waarde = val  };
 		}
 	}
@@ -66,7 +66,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element0220(String val)
 		{
-			this.element = new ElementNummer("0220", "Adellijke titel/predicaat"/*,len: 2*/);
+			this.element = new ElementNummer("0220", "Adellijke titel/predicaat");
 			this.waarde = new ElementWaarde<String> { Waarde = val , Omschrijving = Tabel38.Instance.Omschrijving(val) };
 		}
 	}
@@ -80,7 +80,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element0230(String val)
 		{
-			this.element = new ElementNummer("0230", "Voorvoegsel geslachtsnaam"/*,len: 10*/);
+			this.element = new ElementNummer("0230", "Voorvoegsel geslachtsnaam");
 			this.waarde = new ElementWaarde<String> { Waarde = val , Omschrijving = Tabel36.Instance.Omschrijving(val) };
 		}
 	}
@@ -94,7 +94,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element0240(String val)
 		{
-			this.element = new ElementNummer("0240", "Geslachtsnaam"/*,len: 200*/);
+			this.element = new ElementNummer("0240", "Geslachtsnaam");
 			this.waarde = new ElementWaarde<String> { Waarde = val  };
 		}
 	}
@@ -108,8 +108,8 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element0310(Int32 val)
 		{
-			this.element = new ElementNummer("0310", "Geboortedatum"/*,len: 8*/);
-			this.waarde = new ElementWaarde<Int32> { Waarde = val , Omschrijving = DatumFormatter.Format(val/*, "dd-mm-jjjj"*/) };
+			this.element = new ElementNummer("0310", "Geboortedatum");
+			this.waarde = new ElementWaarde<Int32> { Waarde = val , Omschrijving = DatumFormatter.Format(val) };
 		}
 	}
 
@@ -122,7 +122,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element0320(String val)
 		{
-			this.element = new ElementNummer("0320", "Geboorteplaats"/*,len: 40*/);
+			this.element = new ElementNummer("0320", "Geboorteplaats");
 			this.waarde = new ElementWaarde<String> { Waarde = val , Omschrijving = Tabel33.Instance.Omschrijving(val) };
 		}
 	}
@@ -136,7 +136,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element0330(Int16 val)
 		{
-			this.element = new ElementNummer("0330", "Geboorteland"/*,len: 4*/);
+			this.element = new ElementNummer("0330", "Geboorteland");
 			this.waarde = new ElementWaarde<Int16> { Waarde = val , Omschrijving = Tabel34.Instance.Omschrijving(val) };
 		}
 	}
@@ -152,7 +152,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 
 		public Element0410(String val)
 		{
-			this.element = new ElementNummer("0410", "Geslachtsaanduiding"/*,len: 1*/);
+			this.element = new ElementNummer("0410", "Geslachtsaanduiding");
 			this.waarde = new ElementWaarde<String> { Waarde = val , Omschrijving = Domein[val] };
 		}
 	}
@@ -166,7 +166,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element0510(Int16 val)
 		{
-			this.element = new ElementNummer("0510", "Nationaliteit"/*,len: 4*/);
+			this.element = new ElementNummer("0510", "Nationaliteit");
 			this.waarde = new ElementWaarde<Int16> { Waarde = val , Omschrijving = Tabel32.Instance.Omschrijving(val) };
 		}
 	}
@@ -180,8 +180,8 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element0610(Int32 val)
 		{
-			this.element = new ElementNummer("0610", "Datum huwelijkssluiting/aangaan geregistreerd partnerschap"/*,len: 8*/);
-			this.waarde = new ElementWaarde<Int32> { Waarde = val , Omschrijving = DatumFormatter.Format(val/*, "dd-mm-jjjj"*/) };
+			this.element = new ElementNummer("0610", "Datum huwelijkssluiting/aangaan geregistreerd partnerschap");
+			this.waarde = new ElementWaarde<Int32> { Waarde = val , Omschrijving = DatumFormatter.Format(val) };
 		}
 	}
 
@@ -194,7 +194,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element0620(String val)
 		{
-			this.element = new ElementNummer("0620", "Plaats huwelijkssluiting/aangaan geregistreerd partnerschap"/*,len: 40*/);
+			this.element = new ElementNummer("0620", "Plaats huwelijkssluiting/aangaan geregistreerd partnerschap");
 			this.waarde = new ElementWaarde<String> { Waarde = val , Omschrijving = Tabel33.Instance.Omschrijving(val) };
 		}
 	}
@@ -208,7 +208,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element0630(Int16 val)
 		{
-			this.element = new ElementNummer("0630", "Land huwelijkssluiting/aangaan geregistreerd partnerschap"/*,len: 4*/);
+			this.element = new ElementNummer("0630", "Land huwelijkssluiting/aangaan geregistreerd partnerschap");
 			this.waarde = new ElementWaarde<Int16> { Waarde = val , Omschrijving = Tabel34.Instance.Omschrijving(val) };
 		}
 	}
@@ -222,8 +222,8 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element0710(Int32 val)
 		{
-			this.element = new ElementNummer("0710", "Datum ontbinding huwelijk/geregistreerd partnerschap"/*,len: 8*/);
-			this.waarde = new ElementWaarde<Int32> { Waarde = val , Omschrijving = DatumFormatter.Format(val/*, "dd-mm-jjjj"*/) };
+			this.element = new ElementNummer("0710", "Datum ontbinding huwelijk/geregistreerd partnerschap");
+			this.waarde = new ElementWaarde<Int32> { Waarde = val , Omschrijving = DatumFormatter.Format(val) };
 		}
 	}
 
@@ -236,7 +236,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element0720(String val)
 		{
-			this.element = new ElementNummer("0720", "Plaats ontbinding huwelijk/geregistreerd partnerschap"/*,len: 40*/);
+			this.element = new ElementNummer("0720", "Plaats ontbinding huwelijk/geregistreerd partnerschap");
 			this.waarde = new ElementWaarde<String> { Waarde = val , Omschrijving = Tabel33.Instance.Omschrijving(val) };
 		}
 	}
@@ -250,7 +250,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element0730(Int16 val)
 		{
-			this.element = new ElementNummer("0730", "Land ontbinding huwelijk/geregistreerd partnerschap"/*,len: 4*/);
+			this.element = new ElementNummer("0730", "Land ontbinding huwelijk/geregistreerd partnerschap");
 			this.waarde = new ElementWaarde<Int16> { Waarde = val , Omschrijving = Tabel34.Instance.Omschrijving(val) };
 		}
 	}
@@ -264,7 +264,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element0740(String val)
 		{
-			this.element = new ElementNummer("0740", "Reden ontbinding huwelijk/geregistreerd partnerschap"/*,len: 1*/);
+			this.element = new ElementNummer("0740", "Reden ontbinding huwelijk/geregistreerd partnerschap");
 			this.waarde = new ElementWaarde<String> { Waarde = val , Omschrijving = Tabel41.Instance.Omschrijving(val) };
 		}
 	}
@@ -278,8 +278,8 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element0810(Int32 val)
 		{
-			this.element = new ElementNummer("0810", "Datum overlijden"/*,len: 8*/);
-			this.waarde = new ElementWaarde<Int32> { Waarde = val , Omschrijving = DatumFormatter.Format(val/*, "dd-mm-jjjj"*/) };
+			this.element = new ElementNummer("0810", "Datum overlijden");
+			this.waarde = new ElementWaarde<Int32> { Waarde = val , Omschrijving = DatumFormatter.Format(val) };
 		}
 	}
 
@@ -292,7 +292,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element0820(String val)
 		{
-			this.element = new ElementNummer("0820", "Plaats overlijden"/*,len: 40*/);
+			this.element = new ElementNummer("0820", "Plaats overlijden");
 			this.waarde = new ElementWaarde<String> { Waarde = val , Omschrijving = Tabel33.Instance.Omschrijving(val) };
 		}
 	}
@@ -306,7 +306,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element0830(Int16 val)
 		{
-			this.element = new ElementNummer("0830", "Land overlijden"/*,len: 4*/);
+			this.element = new ElementNummer("0830", "Land overlijden");
 			this.waarde = new ElementWaarde<Int16> { Waarde = val , Omschrijving = Tabel34.Instance.Omschrijving(val) };
 		}
 	}
@@ -320,7 +320,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element0910(Int16 val)
 		{
-			this.element = new ElementNummer("0910", "Gemeente van inschrijving"/*,len: 4*/);
+			this.element = new ElementNummer("0910", "Gemeente van inschrijving");
 			this.waarde = new ElementWaarde<Int16> { Waarde = val , Omschrijving = Tabel33.Instance.Omschrijving(val) };
 		}
 	}
@@ -334,8 +334,8 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element0920(Int32 val)
 		{
-			this.element = new ElementNummer("0920", "Datum inschrijving"/*,len: 8*/);
-			this.waarde = new ElementWaarde<Int32> { Waarde = val , Omschrijving = DatumFormatter.Format(val/*, "dd-mm-jjjj"*/) };
+			this.element = new ElementNummer("0920", "Datum inschrijving");
+			this.waarde = new ElementWaarde<Int32> { Waarde = val , Omschrijving = DatumFormatter.Format(val) };
 		}
 	}
 
@@ -350,7 +350,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 
 		public Element1010(String val)
 		{
-			this.element = new ElementNummer("1010", "Functie adres"/*,len: 1*/);
+			this.element = new ElementNummer("1010", "Functie adres");
 			this.waarde = new ElementWaarde<String> { Waarde = val , Omschrijving = Domein[val] };
 		}
 	}
@@ -364,7 +364,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element1020(String val)
 		{
-			this.element = new ElementNummer("1020", "Gemeentedeel"/*,len: 24*/);
+			this.element = new ElementNummer("1020", "Gemeentedeel");
 			this.waarde = new ElementWaarde<String> { Waarde = val  };
 		}
 	}
@@ -378,8 +378,8 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element1030(Int32 val)
 		{
-			this.element = new ElementNummer("1030", "Datum aanvang adreshouding"/*,len: 8*/);
-			this.waarde = new ElementWaarde<Int32> { Waarde = val , Omschrijving = DatumFormatter.Format(val/*, "dd-mm-jjjj"*/) };
+			this.element = new ElementNummer("1030", "Datum aanvang adreshouding");
+			this.waarde = new ElementWaarde<Int32> { Waarde = val , Omschrijving = DatumFormatter.Format(val) };
 		}
 	}
 
@@ -392,7 +392,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element1110(String val)
 		{
-			this.element = new ElementNummer("1110", "Straatnaam"/*,len: 24*/);
+			this.element = new ElementNummer("1110", "Straatnaam");
 			this.waarde = new ElementWaarde<String> { Waarde = val  };
 		}
 	}
@@ -406,7 +406,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element1115(String val)
 		{
-			this.element = new ElementNummer("1115", "Naam Openbare ruimte"/*,len: 80*/);
+			this.element = new ElementNummer("1115", "Naam Openbare ruimte");
 			this.waarde = new ElementWaarde<String> { Waarde = val  };
 		}
 	}
@@ -420,7 +420,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element1120(Int32 val)
 		{
-			this.element = new ElementNummer("1120", "Huisnummer"/*,len: 5*/);
+			this.element = new ElementNummer("1120", "Huisnummer");
 			this.waarde = new ElementWaarde<Int32> { Waarde = val  };
 		}
 	}
@@ -434,7 +434,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element1130(String val)
 		{
-			this.element = new ElementNummer("1130", "Huisletter"/*,len: 1*/);
+			this.element = new ElementNummer("1130", "Huisletter");
 			this.waarde = new ElementWaarde<String> { Waarde = val  };
 		}
 	}
@@ -448,7 +448,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element1140(String val)
 		{
-			this.element = new ElementNummer("1140", "Huisnummertoevoeging"/*,len: 4*/);
+			this.element = new ElementNummer("1140", "Huisnummertoevoeging");
 			this.waarde = new ElementWaarde<String> { Waarde = val  };
 		}
 	}
@@ -464,7 +464,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 
 		public Element1150(String val)
 		{
-			this.element = new ElementNummer("1150", "Aanduiding bij huisnummer"/*,len: 2*/);
+			this.element = new ElementNummer("1150", "Aanduiding bij huisnummer");
 			this.waarde = new ElementWaarde<String> { Waarde = val , Omschrijving = Domein[val] };
 		}
 	}
@@ -478,7 +478,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element1160(String val)
 		{
-			this.element = new ElementNummer("1160", "Postcode"/*,len: 6*/);
+			this.element = new ElementNummer("1160", "Postcode");
 			this.waarde = new ElementWaarde<String> { Waarde = val  };
 		}
 	}
@@ -492,7 +492,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element1170(String val)
 		{
-			this.element = new ElementNummer("1170", "Woonplaatsnaam"/*,len: 80*/);
+			this.element = new ElementNummer("1170", "Woonplaatsnaam");
 			this.waarde = new ElementWaarde<String> { Waarde = val  };
 		}
 	}
@@ -506,7 +506,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element1180(String val)
 		{
-			this.element = new ElementNummer("1180", "Identificatiecode verblijfplaats"/*,len: 16*/);
+			this.element = new ElementNummer("1180", "Identificatiecode verblijfplaats");
 			this.waarde = new ElementWaarde<String> { Waarde = val  };
 		}
 	}
@@ -520,7 +520,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element1190(String val)
 		{
-			this.element = new ElementNummer("1190", "Identificatiecode nummeraanduiding"/*,len: 16*/);
+			this.element = new ElementNummer("1190", "Identificatiecode nummeraanduiding");
 			this.waarde = new ElementWaarde<String> { Waarde = val  };
 		}
 	}
@@ -534,7 +534,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element1210(String val)
 		{
-			this.element = new ElementNummer("1210", "Locatiebeschrijving"/*,len: 35*/);
+			this.element = new ElementNummer("1210", "Locatiebeschrijving");
 			this.waarde = new ElementWaarde<String> { Waarde = val  };
 		}
 	}
@@ -548,7 +548,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element1310(Int16 val)
 		{
-			this.element = new ElementNummer("1310", "Land adres buitenland"/*,len: 4*/);
+			this.element = new ElementNummer("1310", "Land adres buitenland");
 			this.waarde = new ElementWaarde<Int16> { Waarde = val , Omschrijving = Tabel34.Instance.Omschrijving(val) };
 		}
 	}
@@ -562,8 +562,8 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element1320(Int32 val)
 		{
-			this.element = new ElementNummer("1320", "Datum aanvang adres buitenland"/*,len: 8*/);
-			this.waarde = new ElementWaarde<Int32> { Waarde = val , Omschrijving = DatumFormatter.Format(val/*, "dd-mm-jjjj"*/) };
+			this.element = new ElementNummer("1320", "Datum aanvang adres buitenland");
+			this.waarde = new ElementWaarde<Int32> { Waarde = val , Omschrijving = DatumFormatter.Format(val) };
 		}
 	}
 
@@ -576,7 +576,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element1330(String val)
 		{
-			this.element = new ElementNummer("1330", "Regel 1 adres buitenland"/*,len: 35*/);
+			this.element = new ElementNummer("1330", "Regel 1 adres buitenland");
 			this.waarde = new ElementWaarde<String> { Waarde = val  };
 		}
 	}
@@ -590,7 +590,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element1340(String val)
 		{
-			this.element = new ElementNummer("1340", "Regel 2 adres buitenland"/*,len: 35*/);
+			this.element = new ElementNummer("1340", "Regel 2 adres buitenland");
 			this.waarde = new ElementWaarde<String> { Waarde = val  };
 		}
 	}
@@ -604,7 +604,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element1350(String val)
 		{
-			this.element = new ElementNummer("1350", "Regel 3 adres buitenland"/*,len: 35*/);
+			this.element = new ElementNummer("1350", "Regel 3 adres buitenland");
 			this.waarde = new ElementWaarde<String> { Waarde = val  };
 		}
 	}
@@ -618,7 +618,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element1410(Int16 val)
 		{
-			this.element = new ElementNummer("1410", "Land vanwaar ingeschreven"/*,len: 4*/);
+			this.element = new ElementNummer("1410", "Land vanwaar ingeschreven");
 			this.waarde = new ElementWaarde<Int16> { Waarde = val , Omschrijving = Tabel34.Instance.Omschrijving(val) };
 		}
 	}
@@ -632,8 +632,8 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element1420(Int32 val)
 		{
-			this.element = new ElementNummer("1420", "Datum vestiging in Nederland"/*,len: 8*/);
-			this.waarde = new ElementWaarde<Int32> { Waarde = val , Omschrijving = DatumFormatter.Format(val/*, "dd-mm-jjjj"*/) };
+			this.element = new ElementNummer("1420", "Datum vestiging in Nederland");
+			this.waarde = new ElementWaarde<Int32> { Waarde = val , Omschrijving = DatumFormatter.Format(val) };
 		}
 	}
 
@@ -648,7 +648,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 
 		public Element1510(String val)
 		{
-			this.element = new ElementNummer("1510", "Soort verbintenis"/*,len: 1*/);
+			this.element = new ElementNummer("1510", "Soort verbintenis");
 			this.waarde = new ElementWaarde<String> { Waarde = val , Omschrijving = Domein[val] };
 		}
 	}
@@ -662,7 +662,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element1610(String val)
 		{
-			this.element = new ElementNummer("1610", "Telefoonnummer"/*,len: 15*/);
+			this.element = new ElementNummer("1610", "Telefoonnummer");
 			this.waarde = new ElementWaarde<String> { Waarde = val  };
 		}
 	}
@@ -678,7 +678,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 
 		public Element1620(String val)
 		{
-			this.element = new ElementNummer("1620", "Verificatie-indicatie"/*,len: 2*/);
+			this.element = new ElementNummer("1620", "Verificatie-indicatie");
 			this.waarde = new ElementWaarde<String> { Waarde = val , Omschrijving = Domein[val] };
 		}
 	}
@@ -692,8 +692,8 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element1630(Int32 val)
 		{
-			this.element = new ElementNummer("1630", "Geldig vanaf"/*,len: 8*/);
-			this.waarde = new ElementWaarde<Int32> { Waarde = val , Omschrijving = DatumFormatter.Format(val/*, "dd-mm-jjjj"*/) };
+			this.element = new ElementNummer("1630", "Geldig vanaf");
+			this.waarde = new ElementWaarde<Int32> { Waarde = val , Omschrijving = DatumFormatter.Format(val) };
 		}
 	}
 
@@ -706,7 +706,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element1710(String val)
 		{
-			this.element = new ElementNummer("1710", "E-mailadres"/*,len: 255*/);
+			this.element = new ElementNummer("1710", "E-mailadres");
 			this.waarde = new ElementWaarde<String> { Waarde = val  };
 		}
 	}
@@ -722,7 +722,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 
 		public Element1720(String val)
 		{
-			this.element = new ElementNummer("1720", "Verificatie-indicatie"/*,len: 2*/);
+			this.element = new ElementNummer("1720", "Verificatie-indicatie");
 			this.waarde = new ElementWaarde<String> { Waarde = val , Omschrijving = Domein[val] };
 		}
 	}
@@ -736,8 +736,8 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element1730(Int32 val)
 		{
-			this.element = new ElementNummer("1730", "Geldig vanaf"/*,len: 8*/);
-			this.waarde = new ElementWaarde<Int32> { Waarde = val , Omschrijving = DatumFormatter.Format(val/*, "dd-mm-jjjj"*/) };
+			this.element = new ElementNummer("1730", "Geldig vanaf");
+			this.waarde = new ElementWaarde<Int32> { Waarde = val , Omschrijving = DatumFormatter.Format(val) };
 		}
 	}
 
@@ -750,8 +750,8 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element1810(Int32 val)
 		{
-			this.element = new ElementNummer("1810", "Einddatum geldigheid"/*,len: 8*/);
-			this.waarde = new ElementWaarde<Int32> { Waarde = val , Omschrijving = DatumFormatter.Format(val/*, "dd-mm-jjjj"*/) };
+			this.element = new ElementNummer("1810", "Einddatum geldigheid");
+			this.waarde = new ElementWaarde<Int32> { Waarde = val , Omschrijving = DatumFormatter.Format(val) };
 		}
 	}
 
@@ -766,7 +766,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 
 		public Element1910(String val)
 		{
-			this.element = new ElementNummer("1910", "Type adres"/*,len: 1*/);
+			this.element = new ElementNummer("1910", "Type adres");
 			this.waarde = new ElementWaarde<String> { Waarde = val , Omschrijving = Domein[val] };
 		}
 	}
@@ -780,7 +780,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element2010(Int64 val)
 		{
-			this.element = new ElementNummer("2010", "Vorig A-nummer"/*,len: 10*/);
+			this.element = new ElementNummer("2010", "Vorig A-nummer");
 			this.waarde = new ElementWaarde<Int64> { Waarde = val  };
 		}
 	}
@@ -794,7 +794,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element2020(Int64 val)
 		{
-			this.element = new ElementNummer("2020", "Volgend A-nummer"/*,len: 10*/);
+			this.element = new ElementNummer("2020", "Volgend A-nummer");
 			this.waarde = new ElementWaarde<Int64> { Waarde = val  };
 		}
 	}
@@ -810,7 +810,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 
 		public Element3110(Int16 val)
 		{
-			this.element = new ElementNummer("3110", "Aanduiding Europees kiesrecht"/*,len: 1*/);
+			this.element = new ElementNummer("3110", "Aanduiding Europees kiesrecht");
 			this.waarde = new ElementWaarde<Int16> { Waarde = val , Omschrijving = Domein[val] };
 		}
 	}
@@ -824,8 +824,8 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element3120(Int32 val)
 		{
-			this.element = new ElementNummer("3120", "Datum verzoek of mededeling Europees kiesrecht"/*,len: 8*/);
-			this.waarde = new ElementWaarde<Int32> { Waarde = val , Omschrijving = DatumFormatter.Format(val/*, "dd-mm-jjjj"*/) };
+			this.element = new ElementNummer("3120", "Datum verzoek of mededeling Europees kiesrecht");
+			this.waarde = new ElementWaarde<Int32> { Waarde = val , Omschrijving = DatumFormatter.Format(val) };
 		}
 	}
 
@@ -838,8 +838,8 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element3130(Int32 val)
 		{
-			this.element = new ElementNummer("3130", "Einddatum uitsluiting Europees kiesrecht"/*,len: 8*/);
-			this.waarde = new ElementWaarde<Int32> { Waarde = val , Omschrijving = DatumFormatter.Format(val/*, "dd-mm-jjjj"*/) };
+			this.element = new ElementNummer("3130", "Einddatum uitsluiting Europees kiesrecht");
+			this.waarde = new ElementWaarde<Int32> { Waarde = val , Omschrijving = DatumFormatter.Format(val) };
 		}
 	}
 
@@ -852,7 +852,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element3210(String val)
 		{
-			this.element = new ElementNummer("3210", "Indicatie gezag minderjarige"/*,len: 2*/);
+			this.element = new ElementNummer("3210", "Indicatie gezag minderjarige");
 			this.waarde = new ElementWaarde<String> { Waarde = val  };
 		}
 	}
@@ -868,7 +868,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 
 		public Element3310(Int16 val)
 		{
-			this.element = new ElementNummer("3310", "Indicatie curateleregister"/*,len: 1*/);
+			this.element = new ElementNummer("3310", "Indicatie curateleregister");
 			this.waarde = new ElementWaarde<Int16> { Waarde = val , Omschrijving = Domein[val] };
 		}
 	}
@@ -882,7 +882,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element3510(String val)
 		{
-			this.element = new ElementNummer("3510", "Soort Nederlands reisdocument"/*,len: 2*/);
+			this.element = new ElementNummer("3510", "Soort Nederlands reisdocument");
 			this.waarde = new ElementWaarde<String> { Waarde = val , Omschrijving = Tabel48.Instance.Omschrijving(val) };
 		}
 	}
@@ -896,7 +896,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element3520(String val)
 		{
-			this.element = new ElementNummer("3520", "Nummer Nederlands reisdocument"/*,len: 9*/);
+			this.element = new ElementNummer("3520", "Nummer Nederlands reisdocument");
 			this.waarde = new ElementWaarde<String> { Waarde = val  };
 		}
 	}
@@ -910,8 +910,8 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element3530(Int32 val)
 		{
-			this.element = new ElementNummer("3530", "Datum uitgifte Nederlands reisdocument"/*,len: 8*/);
-			this.waarde = new ElementWaarde<Int32> { Waarde = val , Omschrijving = DatumFormatter.Format(val/*, "dd-mm-jjjj"*/) };
+			this.element = new ElementNummer("3530", "Datum uitgifte Nederlands reisdocument");
+			this.waarde = new ElementWaarde<Int32> { Waarde = val , Omschrijving = DatumFormatter.Format(val) };
 		}
 	}
 
@@ -924,7 +924,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element3540(String val)
 		{
-			this.element = new ElementNummer("3540", "Autoriteit van afgifte Nederlands reisdocument"/*,len: 6*/);
+			this.element = new ElementNummer("3540", "Autoriteit van afgifte Nederlands reisdocument");
 			this.waarde = new ElementWaarde<String> { Waarde = val , Omschrijving = Tabel49.Instance.Omschrijving(val) };
 		}
 	}
@@ -938,8 +938,8 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element3550(Int32 val)
 		{
-			this.element = new ElementNummer("3550", "Datum einde geldigheid Nederlands reisdocument"/*,len: 8*/);
-			this.waarde = new ElementWaarde<Int32> { Waarde = val , Omschrijving = DatumFormatter.Format(val/*, "dd-mm-jjjj"*/) };
+			this.element = new ElementNummer("3550", "Datum einde geldigheid Nederlands reisdocument");
+			this.waarde = new ElementWaarde<Int32> { Waarde = val , Omschrijving = DatumFormatter.Format(val) };
 		}
 	}
 
@@ -952,8 +952,8 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element3560(Int32 val)
 		{
-			this.element = new ElementNummer("3560", "Datum inhouding dan wel vermissing Nederlands reisdocument"/*,len: 8*/);
-			this.waarde = new ElementWaarde<Int32> { Waarde = val , Omschrijving = DatumFormatter.Format(val/*, "dd-mm-jjjj"*/) };
+			this.element = new ElementNummer("3560", "Datum inhouding dan wel vermissing Nederlands reisdocument");
+			this.waarde = new ElementWaarde<Int32> { Waarde = val , Omschrijving = DatumFormatter.Format(val) };
 		}
 	}
 
@@ -968,7 +968,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 
 		public Element3570(String val)
 		{
-			this.element = new ElementNummer("3570", "Aanduiding inhouding dan wel vermissing Nederlands reisdocument"/*,len: 1*/);
+			this.element = new ElementNummer("3570", "Aanduiding inhouding dan wel vermissing Nederlands reisdocument");
 			this.waarde = new ElementWaarde<String> { Waarde = val , Omschrijving = Domein[val] };
 		}
 	}
@@ -984,7 +984,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 
 		public Element3610(Int16 val)
 		{
-			this.element = new ElementNummer("3610", "Signalering met betrekking tot het verstrekken van een Nederlands"/*,len: 1*/);
+			this.element = new ElementNummer("3610", "Signalering met betrekking tot het verstrekken van een Nederlands");
 			this.waarde = new ElementWaarde<Int16> { Waarde = val , Omschrijving = Domein[val] };
 		}
 	}
@@ -1000,7 +1000,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 
 		public Element3810(String val)
 		{
-			this.element = new ElementNummer("3810", "Aanduiding uitgesloten kiesrecht"/*,len: 1*/);
+			this.element = new ElementNummer("3810", "Aanduiding uitgesloten kiesrecht");
 			this.waarde = new ElementWaarde<String> { Waarde = val , Omschrijving = Domein[val] };
 		}
 	}
@@ -1014,8 +1014,8 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element3820(Int32 val)
 		{
-			this.element = new ElementNummer("3820", "Einddatum uitsluiting kiesrecht"/*,len: 8*/);
-			this.waarde = new ElementWaarde<Int32> { Waarde = val , Omschrijving = DatumFormatter.Format(val/*, "dd-mm-jjjj"*/) };
+			this.element = new ElementNummer("3820", "Einddatum uitsluiting kiesrecht");
+			this.waarde = new ElementWaarde<Int32> { Waarde = val , Omschrijving = DatumFormatter.Format(val) };
 		}
 	}
 
@@ -1028,7 +1028,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element3910(Int16 val)
 		{
-			this.element = new ElementNummer("3910", "Aanduiding verblijfstitel"/*,len: 2*/);
+			this.element = new ElementNummer("3910", "Aanduiding verblijfstitel");
 			this.waarde = new ElementWaarde<Int16> { Waarde = val , Omschrijving = Tabel56.Instance.Omschrijving(val) };
 		}
 	}
@@ -1042,8 +1042,8 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element3920(Int32 val)
 		{
-			this.element = new ElementNummer("3920", "Datum einde verblijfstitel"/*,len: 8*/);
-			this.waarde = new ElementWaarde<Int32> { Waarde = val , Omschrijving = DatumFormatter.Format(val/*, "dd-mm-jjjj"*/) };
+			this.element = new ElementNummer("3920", "Datum einde verblijfstitel");
+			this.waarde = new ElementWaarde<Int32> { Waarde = val , Omschrijving = DatumFormatter.Format(val) };
 		}
 	}
 
@@ -1056,8 +1056,8 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element3930(Int32 val)
 		{
-			this.element = new ElementNummer("3930", "Ingangsdatum verblijfstitel"/*,len: 8*/);
-			this.waarde = new ElementWaarde<Int32> { Waarde = val , Omschrijving = DatumFormatter.Format(val/*, "dd-mm-jjjj"*/) };
+			this.element = new ElementNummer("3930", "Ingangsdatum verblijfstitel");
+			this.waarde = new ElementWaarde<Int32> { Waarde = val , Omschrijving = DatumFormatter.Format(val) };
 		}
 	}
 
@@ -1070,7 +1070,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element4010(Int32 val)
 		{
-			this.element = new ElementNummer("4010", "Afnemersindicatie"/*,len: 6*/);
+			this.element = new ElementNummer("4010", "Afnemersindicatie");
 			this.waarde = new ElementWaarde<Int32> { Waarde = val , Omschrijving = Tabel35.Instance.Omschrijving(val) };
 		}
 	}
@@ -1086,7 +1086,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 
 		public Element6110(String val)
 		{
-			this.element = new ElementNummer("6110", "Aanduiding naamgebruik"/*,len: 1*/);
+			this.element = new ElementNummer("6110", "Aanduiding naamgebruik");
 			this.waarde = new ElementWaarde<String> { Waarde = val , Omschrijving = Domein[val] };
 		}
 	}
@@ -1100,8 +1100,8 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element6210(Int32 val)
 		{
-			this.element = new ElementNummer("6210", "Datum ingang familierechtelijke betrekking"/*,len: 8*/);
-			this.waarde = new ElementWaarde<Int32> { Waarde = val , Omschrijving = DatumFormatter.Format(val/*, "dd-mm-jjjj"*/) };
+			this.element = new ElementNummer("6210", "Datum ingang familierechtelijke betrekking");
+			this.waarde = new ElementWaarde<Int32> { Waarde = val , Omschrijving = DatumFormatter.Format(val) };
 		}
 	}
 
@@ -1114,7 +1114,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element6310(Int16 val)
 		{
-			this.element = new ElementNummer("6310", "Reden opname nationaliteit"/*,len: 3*/);
+			this.element = new ElementNummer("6310", "Reden opname nationaliteit");
 			this.waarde = new ElementWaarde<Int16> { Waarde = val , Omschrijving = Tabel37.Instance.Omschrijving(val) };
 		}
 	}
@@ -1128,7 +1128,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element6410(Int16 val)
 		{
-			this.element = new ElementNummer("6410", "Reden beëindigen nationaliteit"/*,len: 3*/);
+			this.element = new ElementNummer("6410", "Reden beëindigen nationaliteit");
 			this.waarde = new ElementWaarde<Int16> { Waarde = val , Omschrijving = Tabel37.Instance.Omschrijving(val) };
 		}
 	}
@@ -1144,7 +1144,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 
 		public Element6510(String val)
 		{
-			this.element = new ElementNummer("6510", "Aanduiding bijzonder Nederlanderschap"/*,len: 1*/);
+			this.element = new ElementNummer("6510", "Aanduiding bijzonder Nederlanderschap");
 			this.waarde = new ElementWaarde<String> { Waarde = val , Omschrijving = Domein[val] };
 		}
 	}
@@ -1158,8 +1158,8 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element6620(Int32 val)
 		{
-			this.element = new ElementNummer("6620", "Datum ingang blokkering PL"/*,len: 8*/);
-			this.waarde = new ElementWaarde<Int32> { Waarde = val , Omschrijving = DatumFormatter.Format(val/*, "dd-mm-jjjj"*/) };
+			this.element = new ElementNummer("6620", "Datum ingang blokkering PL");
+			this.waarde = new ElementWaarde<Int32> { Waarde = val , Omschrijving = DatumFormatter.Format(val) };
 		}
 	}
 
@@ -1172,8 +1172,8 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element6710(Int32 val)
 		{
-			this.element = new ElementNummer("6710", "Datum opschorting bijhouding"/*,len: 8*/);
-			this.waarde = new ElementWaarde<Int32> { Waarde = val , Omschrijving = DatumFormatter.Format(val/*, "dd-mm-jjjj"*/) };
+			this.element = new ElementNummer("6710", "Datum opschorting bijhouding");
+			this.waarde = new ElementWaarde<Int32> { Waarde = val , Omschrijving = DatumFormatter.Format(val) };
 		}
 	}
 
@@ -1188,7 +1188,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 
 		public Element6720(String val)
 		{
-			this.element = new ElementNummer("6720", "Omschrijving reden opschorting bijhouding"/*,len: 1*/);
+			this.element = new ElementNummer("6720", "Omschrijving reden opschorting bijhouding");
 			this.waarde = new ElementWaarde<String> { Waarde = val , Omschrijving = Domein[val] };
 		}
 	}
@@ -1202,8 +1202,8 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element6810(Int32 val)
 		{
-			this.element = new ElementNummer("6810", "Datum eerste inschrijving BRP"/*,len: 8*/);
-			this.waarde = new ElementWaarde<Int32> { Waarde = val , Omschrijving = DatumFormatter.Format(val/*, "dd-mm-jjjj"*/) };
+			this.element = new ElementNummer("6810", "Datum eerste inschrijving BRP");
+			this.waarde = new ElementWaarde<Int32> { Waarde = val , Omschrijving = DatumFormatter.Format(val) };
 		}
 	}
 
@@ -1216,7 +1216,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element6910(Int16 val)
 		{
-			this.element = new ElementNummer("6910", "Gemeente waar de PK zich bevindt"/*,len: 4*/);
+			this.element = new ElementNummer("6910", "Gemeente waar de PK zich bevindt");
 			this.waarde = new ElementWaarde<Int16> { Waarde = val , Omschrijving = Tabel33.Instance.Omschrijving(val) };
 		}
 	}
@@ -1232,7 +1232,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 
 		public Element7010(Int16 val)
 		{
-			this.element = new ElementNummer("7010", "Indicatie geheim"/*,len: 1*/);
+			this.element = new ElementNummer("7010", "Indicatie geheim");
 			this.waarde = new ElementWaarde<Int16> { Waarde = val , Omschrijving = Domein[val] };
 		}
 	}
@@ -1246,8 +1246,8 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element7110(Int32 val)
 		{
-			this.element = new ElementNummer("7110", "Datum verificatie"/*,len: 8*/);
-			this.waarde = new ElementWaarde<Int32> { Waarde = val , Omschrijving = DatumFormatter.Format(val/*, "dd-mm-jjjj"*/) };
+			this.element = new ElementNummer("7110", "Datum verificatie");
+			this.waarde = new ElementWaarde<Int32> { Waarde = val , Omschrijving = DatumFormatter.Format(val) };
 		}
 	}
 
@@ -1260,7 +1260,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element7120(String val)
 		{
-			this.element = new ElementNummer("7120", "Omschrijving verificatie"/*,len: 50*/);
+			this.element = new ElementNummer("7120", "Omschrijving verificatie");
 			this.waarde = new ElementWaarde<String> { Waarde = val  };
 		}
 	}
@@ -1276,7 +1276,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 
 		public Element7210(String val)
 		{
-			this.element = new ElementNummer("7210", "Omschrijving van de aangifte adreshouding"/*,len: 1*/);
+			this.element = new ElementNummer("7210", "Omschrijving van de aangifte adreshouding");
 			this.waarde = new ElementWaarde<String> { Waarde = val , Omschrijving = Domein[val] };
 		}
 	}
@@ -1290,7 +1290,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element7310(String val)
 		{
-			this.element = new ElementNummer("7310", "EU-persoonsnummer"/*,len: 40*/);
+			this.element = new ElementNummer("7310", "EU-persoonsnummer");
 			this.waarde = new ElementWaarde<String> { Waarde = val  };
 		}
 	}
@@ -1306,7 +1306,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 
 		public Element7510(Int16 val)
 		{
-			this.element = new ElementNummer("7510", "Indicatie document"/*,len: 1*/);
+			this.element = new ElementNummer("7510", "Indicatie document");
 			this.waarde = new ElementWaarde<Int16> { Waarde = val , Omschrijving = Domein[val] };
 		}
 	}
@@ -1320,7 +1320,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element8010(Int16 val)
 		{
-			this.element = new ElementNummer("8010", "Versienummer"/*,len: 4*/);
+			this.element = new ElementNummer("8010", "Versienummer");
 			this.waarde = new ElementWaarde<Int16> { Waarde = val  };
 		}
 	}
@@ -1334,7 +1334,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element8020(Int64 val)
 		{
-			this.element = new ElementNummer("8020", "Datumtijdstempel"/*,len: 17*/);
+			this.element = new ElementNummer("8020", "Datumtijdstempel");
 			this.waarde = new ElementWaarde<Int64> { Waarde = val  };
 		}
 	}
@@ -1348,7 +1348,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element8110(Int16 val)
 		{
-			this.element = new ElementNummer("8110", "Registergemeente akte"/*,len: 4*/);
+			this.element = new ElementNummer("8110", "Registergemeente akte");
 			this.waarde = new ElementWaarde<Int16> { Waarde = val , Omschrijving = Tabel33.Instance.Omschrijving(val) };
 		}
 	}
@@ -1362,7 +1362,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element8120(String val)
 		{
-			this.element = new ElementNummer("8120", "Aktenummer"/*,len: 7*/);
+			this.element = new ElementNummer("8120", "Aktenummer");
 			this.waarde = new ElementWaarde<String> { Waarde = val , Omschrijving = Tabel39.Instance.Omschrijving(val) };
 		}
 	}
@@ -1376,7 +1376,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element8210(Int16 val)
 		{
-			this.element = new ElementNummer("8210", "Gemeente document"/*,len: 4*/);
+			this.element = new ElementNummer("8210", "Gemeente document");
 			this.waarde = new ElementWaarde<Int16> { Waarde = val , Omschrijving = Tabel33.Instance.Omschrijving(val) };
 		}
 	}
@@ -1390,8 +1390,8 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element8220(Int32 val)
 		{
-			this.element = new ElementNummer("8220", "Datum document"/*,len: 8*/);
-			this.waarde = new ElementWaarde<Int32> { Waarde = val , Omschrijving = DatumFormatter.Format(val/*, "dd-mm-jjjj"*/) };
+			this.element = new ElementNummer("8220", "Datum document");
+			this.waarde = new ElementWaarde<Int32> { Waarde = val , Omschrijving = DatumFormatter.Format(val) };
 		}
 	}
 
@@ -1404,7 +1404,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element8230(String val)
 		{
-			this.element = new ElementNummer("8230", "Beschrijving document"/*,len: 40*/);
+			this.element = new ElementNummer("8230", "Beschrijving document");
 			this.waarde = new ElementWaarde<String> { Waarde = val  };
 		}
 	}
@@ -1418,7 +1418,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element8310(Int32 val)
 		{
-			this.element = new ElementNummer("8310", "Aanduiding gegevens in onderzoek"/*,len: 6*/);
+			this.element = new ElementNummer("8310", "Aanduiding gegevens in onderzoek");
 			this.waarde = new ElementWaarde<Int32> { Waarde = val  };
 		}
 	}
@@ -1432,8 +1432,8 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element8320(Int32 val)
 		{
-			this.element = new ElementNummer("8320", "Datum ingang onderzoek"/*,len: 8*/);
-			this.waarde = new ElementWaarde<Int32> { Waarde = val , Omschrijving = DatumFormatter.Format(val/*, "dd-mm-jjjj"*/) };
+			this.element = new ElementNummer("8320", "Datum ingang onderzoek");
+			this.waarde = new ElementWaarde<Int32> { Waarde = val , Omschrijving = DatumFormatter.Format(val) };
 		}
 	}
 
@@ -1446,8 +1446,8 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element8330(Int32 val)
 		{
-			this.element = new ElementNummer("8330", "Datum einde onderzoek"/*,len: 8*/);
-			this.waarde = new ElementWaarde<Int32> { Waarde = val , Omschrijving = DatumFormatter.Format(val/*, "dd-mm-jjjj"*/) };
+			this.element = new ElementNummer("8330", "Datum einde onderzoek");
+			this.waarde = new ElementWaarde<Int32> { Waarde = val , Omschrijving = DatumFormatter.Format(val) };
 		}
 	}
 
@@ -1462,7 +1462,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 
 		public Element8410(String val)
 		{
-			this.element = new ElementNummer("8410", "Indicatie onjuist, dan wel strijdigheid met de openbare orde"/*,len: 1*/);
+			this.element = new ElementNummer("8410", "Indicatie onjuist, dan wel strijdigheid met de openbare orde");
 			this.waarde = new ElementWaarde<String> { Waarde = val , Omschrijving = Domein[val] };
 		}
 	}
@@ -1476,8 +1476,8 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element8510(Int32 val)
 		{
-			this.element = new ElementNummer("8510", "Ingangsdatum geldigheid"/*,len: 8*/);
-			this.waarde = new ElementWaarde<Int32> { Waarde = val , Omschrijving = DatumFormatter.Format(val/*, "dd-mm-jjjj"*/) };
+			this.element = new ElementNummer("8510", "Ingangsdatum geldigheid");
+			this.waarde = new ElementWaarde<Int32> { Waarde = val , Omschrijving = DatumFormatter.Format(val) };
 		}
 	}
 
@@ -1490,8 +1490,8 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element8610(Int32 val)
 		{
-			this.element = new ElementNummer("8610", "Datum van opneming"/*,len: 8*/);
-			this.waarde = new ElementWaarde<Int32> { Waarde = val , Omschrijving = DatumFormatter.Format(val/*, "dd-mm-jjjj"*/) };
+			this.element = new ElementNummer("8610", "Datum van opneming");
+			this.waarde = new ElementWaarde<Int32> { Waarde = val , Omschrijving = DatumFormatter.Format(val) };
 		}
 	}
 
@@ -1506,7 +1506,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 
 		public Element8710(String val)
 		{
-			this.element = new ElementNummer("8710", "PK-gegevens volledig meegeconverteerd"/*,len: 1*/);
+			this.element = new ElementNummer("8710", "PK-gegevens volledig meegeconverteerd");
 			this.waarde = new ElementWaarde<String> { Waarde = val , Omschrijving = Domein[val] };
 		}
 	}
@@ -1520,7 +1520,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element8810(Int16 val)
 		{
-			this.element = new ElementNummer("8810", "RNI-deelnemer"/*,len: 4*/);
+			this.element = new ElementNummer("8810", "RNI-deelnemer");
 			this.waarde = new ElementWaarde<Int16> { Waarde = val , Omschrijving = Tabel60.Instance.Omschrijving(val) };
 		}
 	}
@@ -1534,7 +1534,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	{
 		public Element8820(String val)
 		{
-			this.element = new ElementNummer("8820", "Omschrijving verdrag"/*,len: 50*/);
+			this.element = new ElementNummer("8820", "Omschrijving verdrag");
 			this.waarde = new ElementWaarde<String> { Waarde = val  };
 		}
 	}
@@ -1550,7 +1550,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 
 		public Element8910(String val)
 		{
-			this.element = new ElementNummer("8910", "Registratie betrekking"/*,len: 1*/);
+			this.element = new ElementNummer("8910", "Registratie betrekking");
 			this.waarde = new ElementWaarde<String> { Waarde = val , Omschrijving = Domein[val] };
 		}
 	}
