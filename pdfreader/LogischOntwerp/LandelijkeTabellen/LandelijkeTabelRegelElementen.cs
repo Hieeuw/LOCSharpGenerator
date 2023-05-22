@@ -73,11 +73,10 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 	public partial class Element9210 : Element<string>
 	{
 		private Element9210() => this.element = new ElementNummer(nummer: "9210", naam: "Gemeentecode");
-		public Element9210(Int16 val) : this() => this.waarde = new ElementWaarde<Int16> { Waarde = val };
 		public Element9210(string val) : this()
 		{
-			if (val.Length > 0) this.waarde = new ElementWaarde<Int16> { Waarde = Convert.ToInt16(val) };
-		}
+			this.waarde = new Elementwaarde<string> {Waarde = val };
+			}
 	}
 
 	/// <summary>

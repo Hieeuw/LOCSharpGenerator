@@ -108,7 +108,7 @@ namespace pdfreader
                 //sb.Append($"\t\t}}\r\n");
 
                 sb.Append(this.PrivateConstructor());
-                sb.Append(this.TypedConstructor());
+                if (this.Nummer != "9210") sb.Append(this.TypedConstructor());
                 sb.Append(this.StringConstructor());
 
                 return sb.ToString();
@@ -123,11 +123,11 @@ namespace pdfreader
                     return $"\t\tpublic Element{this.Nummer}({this.DotNetType.Name} val) : this() => this.waarde = new ElementWaarde<{this.DotNetType.Name}> {{ Waarde = val }};\r\n";
                 return string.Empty;
             }
-
+            
             private string StringConstructor()
             {
-                return
-                    $"\t\tpublic Element{this.Nummer}(string val) : this()\r\n\t\t{{\r\n\t\t\tif (val.Length > 0) this.waarde = new ElementWaarde<{this.DotNetType.Name}> {{ Waarde = Convert.To{this.DotNetType.Name}(val) }};\r\n\t\t}}\r\n";
+                return this.Nummer == "9210" ? $"\t\tpublic Element9210(string val) : this()\r\n\t\t{{\r\n\t\t\tthis.waarde = new ElementWaarde<string> {{ Waarde = val }};\r\n\t\t}}\r\n" : 
+                   $"\t\tpublic Element{this.Nummer}(string val) : this()\r\n\t\t{{\r\n\t\t\tif (val.Length > 0) this.waarde = new ElementWaarde<{this.DotNetType.Name}> {{ Waarde = Convert.To{this.DotNetType.Name}(val) }};\r\n\t\t}}\r\n";
             }
             
         }
@@ -255,7 +255,7 @@ namespace pdfreader
             sb.Append($"\t\tprivate static readonly Lazy<Tabel{this.Nummer}> lazy = new Lazy<Tabel{this.Nummer}>( () => new Tabel{this.Nummer}() );\r\n\r\n");
             sb.Append($"\t\tpublic static Tabel{this.Nummer} Instance => lazy.Value;\r\n\r\n");
             //sb.Append($"\t\tprivate Tabel{this.Nummer}()\r\n\t\t{{\r\n\t\t\tTabelregels = new Dictionary<{this.ElementOpsomming.First().DotNetType.Name}, Tabelregel{this.Nummer}>();\r\n\t\t\tforeach (var rgl in System.IO.File.ReadLines(@\"csv\\Tabel{this.Nummer}.csv\"))\r\n\t\t\t{{\r\n\t\t\t\t{tabelregel}\r\n\t\t\t\tTabelregels.Add(tabelregel.element{this.ElementOpsomming.First().Nummer}.Waarde, tabelregel);\r\n\t\t\t}}\r\n\t\t}}\r\n\r\n");
-            sb.Append($"\t\tprivate Tabel{this.Nummer}()\r\n\t\t{{\r\n\t\t\tTabelregels = new Dictionary<{typename}, Tabelregel{this.Nummer}>();\r\n\t\t\tforeach (var rgl in System.IO.File.ReadLines(@\"csv\\Tabel{this.Nummer}.csv\"))\r\n\t\t\t{{\r\n\t\t\t\t{tabelregel}\r\n\t\t\t\tTabelregels.Add(tabelregel.element{this.ElementOpsomming.First().Nummer}.Waarde, tabelregel);\r\n\t\t\t}}\r\n\t\t}}\r\n\r\n");
+            sb.Append($"\t\tprivate Tabel{this.Nummer}()\r\n\t\t{{\r\n\t\t\tTabelregels = new Dictionary<{typename}, Tabelregel{this.Nummer}>();\r\n\t\t\tforeach (var rgl in System.IO.File.ReadLines(@\"..\\..\\..\\..\\ResourceLayer.Brp\\DomainModel\\LogischOntwerp\\LandelijkeTabellen\\csv\\Tabel{this.Nummer}.csv\").Skip(1))\r\n\t\t\t{{\r\n\t\t\t\t{tabelregel}\r\n\t\t\t\tTabelregels.Add(tabelregel.element{this.ElementOpsomming.First().Nummer}.Waarde, tabelregel);\r\n\t\t\t}}\r\n\t\t}}\r\n\r\n");
             //sb.Append($"\t\tpublic string Omschrijving({this.ElementOpsomming.First().DotNetType.Name} code)\r\n\t\t{{\r\n\t\t\tif (code == null)\r\n\t\t\t\treturn null;\r\n\t\t\tif (Tabelregels.ContainsKey(code))\r\n\t\t\t\treturn Tabelregels[code].Omschrijving;\r\n\t\t\tthrow new TabelregelNotFoundException($\"code {{code}} niet aangetroffen in Tabel{this.Nummer}\");\r\n\t\t}}\r\n\r\n"); // Nullable '?' verwijderd
             sb.Append($"\t\tpublic string Omschrijving({typename} code)\r\n\t\t{{\r\n\t\t\tif (Tabelregels.ContainsKey(code))\r\n\t\t\t\treturn Tabelregels[code].Omschrijving;\r\n\t\t\t{(this.Nummer == "33" ? $"return string.Empty;\r\n" : $"throw new TabelregelNotFoundException($\"code {{code}} niet aangetroffen in Tabel{this.Nummer}\");\r\n" )}\t\t}}\r\n\r\n"); // Nullable '?' verwijderd
             if (this.Nummer == "33")

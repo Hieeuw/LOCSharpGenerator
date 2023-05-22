@@ -44,10 +44,12 @@ namespace RaadplegenPLSourceGenerator
             this.Tabellen = new List<Tabel>();
         }
 
-        public LogischOntwerpReader(string file)
+        public LogischOntwerpReader(string file, string outputDir = @"../../LogischOntwerp")
             : this()
         {
+            
             this.File = Path.GetFileName(file);
+            this.OutputDir = outputDir;
             this.versie = new Versie();
             PdfReader reader = new PdfReader(file);
             int item = 1;
@@ -76,6 +78,7 @@ namespace RaadplegenPLSourceGenerator
             reader.Close();
             Console.WriteLine("Writing content...");
             this.WriteClassesToFiles();
+            OutputDir = outputDir;
         }
 
         public void Read(string paginaInhoud)
@@ -156,25 +159,16 @@ namespace RaadplegenPLSourceGenerator
 
         public void WriteClassesToFiles()
         {
-            System.IO.File.WriteAllText("../../LogischOntwerp/Categorieen/Categorieen.cs", this.WriteCategorieen());
-            System.IO.File.WriteAllText("../../LogischOntwerp/Groepen/Groepen.cs", this.WriteGroepen());
-            System.IO.File.WriteAllText("../../LogischOntwerp/Elementen/Elementen.cs", this.WriteElementen());
             System.IO.File.WriteAllText(
-                "../../LogischOntwerp/Categorieen/CategorieenZonderHist.cs",
-                this.WriteCategorieenZonderHist());
-            System.IO.File.WriteAllText(
-                "../../LogischOntwerp/Categorieen/CategorieenMetHistorie.cs",
-                this.WriteCategorieenHeeftHist());
-            System.IO.File.WriteAllText(
-                "../../LogischOntwerp/Categorieen/HistorischeCategorieen.cs",
-                this.WriteHistCategorieen());
-            System.IO.File.WriteAllText("../../LogischOntwerp/LandelijkeTabellen/LandelijkeTabelRegels.cs", this.WriteLTRegels());
-            System.IO.File.WriteAllText(
-                "../../LogischOntwerp/LandelijkeTabellen/LandelijkeTabelRegelElementen.cs",
-                this.WriteLTElementen());
-            System.IO.File.WriteAllText(
-                "../../LogischOntwerp/LandelijkeTabellen/LandelijkeTabellen.cs",
-                this.WriteLandelijkeTabellen());
+                Path.Combine(this.OutputDir, "Categorieen", "Categorieen.cs"), this.WriteCategorieen()); // "../../LogischOntwerp/Categorieen/Categorieen.cs", this.WriteCategorieen());
+            System.IO.File.WriteAllText(Path.Combine(this.OutputDir, "Groepen", "Groepen.cs"), this.WriteGroepen());
+            System.IO.File.WriteAllText(Path.Combine(this.OutputDir, "Elementen", "Elementen.cs"), this.WriteElementen());
+            System.IO.File.WriteAllText(Path.Combine(this.OutputDir, "Categorieen", "CategorieenZonderHist.cs"), this.WriteCategorieenZonderHist());
+            System.IO.File.WriteAllText(Path.Combine(this.OutputDir, "Categorieen", "CategorieenMetHist.cs"), this.WriteCategorieenHeeftHist());
+            System.IO.File.WriteAllText(Path.Combine(this.OutputDir, "Categorieen", "HistorischeCategorieen.cs"), this.WriteHistCategorieen());
+            System.IO.File.WriteAllText(Path.Combine(this.OutputDir, "LandelijkeTabellen", "LandelijkeTabelRegels.cs"), this.WriteLTRegels());
+            System.IO.File.WriteAllText(Path.Combine(this.OutputDir, "LandelijkeTabellen", "LandelijkeTabelRegelElementen.cs"), this.WriteLTElementen());
+            System.IO.File.WriteAllText(Path.Combine(this.OutputDir, "LandelijkeTabellen", "LandelijkeTabellen.cs"), this.WriteLandelijkeTabellen());
         }
 
         public string WriteElementen()
@@ -247,9 +241,12 @@ namespace RaadplegenPLSourceGenerator
                                           "\r\n//\r\n//\x00a0\x00a0\x00a0 Manual changes to this file may cause unexpected behavior in your application.\r\n//\x00a0\x00a0\x00a0 Manual changes to this file will be overwritten if the code is regenerated.\r\n// </auto-generated>\r\n//------------------------------------------------------------------------------\r\n"
                                       };
             builder.Append(string.Concat(textArray1));
+            builder.Append("using System;\r\n");
             builder.Append("using System.Collections.Generic;\r\n");
             builder.Append("using System.Diagnostics.CodeAnalysis;\r\n");
+            builder.Append("using System.Linq;\r\n");
             builder.Append("using Newtonsoft.Json;\r\n\r\n");
+            builder.Append("using Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.Exceptions;\r\n");
             builder.Append(
                 "namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.LogischOntwerp.LandelijkeTabellen\r\n");
             builder.Append("{\r\n");
@@ -273,6 +270,7 @@ namespace RaadplegenPLSourceGenerator
                                           "\r\n//\r\n//\x00a0\x00a0\x00a0 Manual changes to this file may cause unexpected behavior in your application.\r\n//\x00a0\x00a0\x00a0 Manual changes to this file will be overwritten if the code is regenerated.\r\n// </auto-generated>\r\n//------------------------------------------------------------------------------\r\n"
                                       };
             builder.Append(string.Concat(textArray1));
+            builder.Append("using System;\r\n");
             builder.Append("using System.Diagnostics.CodeAnalysis;\r\n");
             builder.Append("using Newtonsoft.Json;\r\n\r\n");
             builder.Append(
@@ -305,6 +303,7 @@ namespace RaadplegenPLSourceGenerator
                                           "\r\n//\r\n//\x00a0\x00a0\x00a0 Manual changes to this file may cause unexpected behavior in your application.\r\n//\x00a0\x00a0\x00a0 Manual changes to this file will be overwritten if the code is regenerated.\r\n// </auto-generated>\r\n//------------------------------------------------------------------------------\r\n"
                                       };
             builder.Append(string.Concat(textArray1));
+            builder.Append("using System;\r\n");
             builder.Append("using System.Diagnostics.CodeAnalysis;\r\n");
             builder.Append("using Newtonsoft.Json;\r\n\r\n");
             builder.Append(
@@ -677,6 +676,8 @@ namespace RaadplegenPLSourceGenerator
         //    internal bool <get__HistCategorieen>b__37_0(Categorie c) =>
         //        c.HeeftHistorie;
         //}
+
+        public string OutputDir = "../../LogischOntwerp";
 
 
     }

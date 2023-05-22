@@ -6,10 +6,13 @@
 //    Manual changes to this file will be overwritten if the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 using Newtonsoft.Json;
 
+using Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.Exceptions;
 namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.LogischOntwerp.LandelijkeTabellen
 {
 	/// <summary>
@@ -28,7 +31,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 		private Tabel32()
 		{
 			Tabelregels = new Dictionary<Int16, Tabelregel32>();
-			foreach (var rgl in System.IO.File.ReadLines(@"csv\Tabel32.csv"))
+			foreach (var rgl in System.IO.File.ReadLines(@"..\..\..\..\ResourceLayer.Brp\DomainModel\LogischOntwerp\LandelijkeTabellen\csv\Tabel32.csv").Skip(1))
 			{
 				var tabelregel = new Tabelregel32(rgl.Replace($"\",\"", "•").Replace($"\"", string.Empty).Replace($"\r", string.Empty).Replace($"\n", string.Empty));
 				Tabelregels.Add(tabelregel.element0511.Waarde, tabelregel);
@@ -60,7 +63,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 		private Tabel33()
 		{
 			Tabelregels = new Dictionary<string, Tabelregel33>();
-			foreach (var rgl in System.IO.File.ReadLines(@"csv\Tabel33.csv"))
+			foreach (var rgl in System.IO.File.ReadLines(@"..\..\..\..\ResourceLayer.Brp\DomainModel\LogischOntwerp\LandelijkeTabellen\csv\Tabel33.csv").Skip(1))
 			{
 				var tabelregel = new Tabelregel33(rgl.Replace($"\",\"", "•").Replace($"\"", string.Empty).Replace($"\r", string.Empty).Replace($"\n", string.Empty));
 				Tabelregels.Add(tabelregel.element9210.Waarde, tabelregel);
@@ -93,7 +96,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 		private Tabel34()
 		{
 			Tabelregels = new Dictionary<Int16, Tabelregel34>();
-			foreach (var rgl in System.IO.File.ReadLines(@"csv\Tabel34.csv"))
+			foreach (var rgl in System.IO.File.ReadLines(@"..\..\..\..\ResourceLayer.Brp\DomainModel\LogischOntwerp\LandelijkeTabellen\csv\Tabel34.csv").Skip(1))
 			{
 				var tabelregel = new Tabelregel34(rgl.Replace($"\",\"", "•").Replace($"\"", string.Empty).Replace($"\r", string.Empty).Replace($"\n", string.Empty));
 				Tabelregels.Add(tabelregel.element9410.Waarde, tabelregel);
@@ -125,7 +128,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 		private Tabel36()
 		{
 			Tabelregels = new Dictionary<String, Tabelregel36>();
-			foreach (var rgl in System.IO.File.ReadLines(@"csv\Tabel36.csv"))
+			foreach (var rgl in System.IO.File.ReadLines(@"..\..\..\..\ResourceLayer.Brp\DomainModel\LogischOntwerp\LandelijkeTabellen\csv\Tabel36.csv").Skip(1))
 			{
 				var tabelregel = new Tabelregel36(rgl.Replace($"\",\"", "•").Replace($"\"", string.Empty).Replace($"\r", string.Empty).Replace($"\n", string.Empty));
 				Tabelregels.Add(tabelregel.element0231.Waarde, tabelregel);
@@ -157,7 +160,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 		private Tabel37()
 		{
 			Tabelregels = new Dictionary<Int16, Tabelregel37>();
-			foreach (var rgl in System.IO.File.ReadLines(@"csv\Tabel37.csv"))
+			foreach (var rgl in System.IO.File.ReadLines(@"..\..\..\..\ResourceLayer.Brp\DomainModel\LogischOntwerp\LandelijkeTabellen\csv\Tabel37.csv").Skip(1))
 			{
 				var tabelregel = new Tabelregel37(rgl.Replace($"\",\"", "•").Replace($"\"", string.Empty).Replace($"\r", string.Empty).Replace($"\n", string.Empty));
 				Tabelregels.Add(tabelregel.element9610.Waarde, tabelregel);
@@ -189,7 +192,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 		private Tabel38()
 		{
 			Tabelregels = new Dictionary<String, Tabelregel38>();
-			foreach (var rgl in System.IO.File.ReadLines(@"csv\Tabel38.csv"))
+			foreach (var rgl in System.IO.File.ReadLines(@"..\..\..\..\ResourceLayer.Brp\DomainModel\LogischOntwerp\LandelijkeTabellen\csv\Tabel38.csv").Skip(1))
 			{
 				var tabelregel = new Tabelregel38(rgl.Replace($"\",\"", "•").Replace($"\"", string.Empty).Replace($"\r", string.Empty).Replace($"\n", string.Empty));
 				Tabelregels.Add(tabelregel.element0221.Waarde, tabelregel);
@@ -221,7 +224,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 		private Tabel39()
 		{
 			Tabelregels = new Dictionary<String, Tabelregel39>();
-			foreach (var rgl in System.IO.File.ReadLines(@"csv\Tabel39.csv"))
+			foreach (var rgl in System.IO.File.ReadLines(@"..\..\..\..\ResourceLayer.Brp\DomainModel\LogischOntwerp\LandelijkeTabellen\csv\Tabel39.csv").Skip(1))
 			{
 				var tabelregel = new Tabelregel39(rgl.Replace($"\",\"", "•").Replace($"\"", string.Empty).Replace($"\r", string.Empty).Replace($"\n", string.Empty));
 				Tabelregels.Add(tabelregel.element8121.Waarde, tabelregel);
@@ -253,7 +256,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 		private Tabel41()
 		{
 			Tabelregels = new Dictionary<String, Tabelregel41>();
-			foreach (var rgl in System.IO.File.ReadLines(@"csv\Tabel41.csv"))
+			foreach (var rgl in System.IO.File.ReadLines(@"..\..\..\..\ResourceLayer.Brp\DomainModel\LogischOntwerp\LandelijkeTabellen\csv\Tabel41.csv").Skip(1))
 			{
 				var tabelregel = new Tabelregel41(rgl.Replace($"\",\"", "•").Replace($"\"", string.Empty).Replace($"\r", string.Empty).Replace($"\n", string.Empty));
 				Tabelregels.Add(tabelregel.element0741.Waarde, tabelregel);
@@ -285,7 +288,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 		private Tabel48()
 		{
 			Tabelregels = new Dictionary<String, Tabelregel48>();
-			foreach (var rgl in System.IO.File.ReadLines(@"csv\Tabel48.csv"))
+			foreach (var rgl in System.IO.File.ReadLines(@"..\..\..\..\ResourceLayer.Brp\DomainModel\LogischOntwerp\LandelijkeTabellen\csv\Tabel48.csv").Skip(1))
 			{
 				var tabelregel = new Tabelregel48(rgl.Replace($"\",\"", "•").Replace($"\"", string.Empty).Replace($"\r", string.Empty).Replace($"\n", string.Empty));
 				Tabelregels.Add(tabelregel.element3511.Waarde, tabelregel);
@@ -317,7 +320,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 		private Tabel49()
 		{
 			Tabelregels = new Dictionary<String, Tabelregel49>();
-			foreach (var rgl in System.IO.File.ReadLines(@"csv\Tabel49.csv"))
+			foreach (var rgl in System.IO.File.ReadLines(@"..\..\..\..\ResourceLayer.Brp\DomainModel\LogischOntwerp\LandelijkeTabellen\csv\Tabel49.csv").Skip(1))
 			{
 				var tabelregel = new Tabelregel49(rgl.Replace($"\",\"", "•").Replace($"\"", string.Empty).Replace($"\r", string.Empty).Replace($"\n", string.Empty));
 				Tabelregels.Add(tabelregel.element3541.Waarde, tabelregel);
@@ -349,7 +352,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 		private Tabel56()
 		{
 			Tabelregels = new Dictionary<Int16, Tabelregel56>();
-			foreach (var rgl in System.IO.File.ReadLines(@"csv\Tabel56.csv"))
+			foreach (var rgl in System.IO.File.ReadLines(@"..\..\..\..\ResourceLayer.Brp\DomainModel\LogischOntwerp\LandelijkeTabellen\csv\Tabel56.csv").Skip(1))
 			{
 				var tabelregel = new Tabelregel56(rgl.Replace($"\",\"", "•").Replace($"\"", string.Empty).Replace($"\r", string.Empty).Replace($"\n", string.Empty));
 				Tabelregels.Add(tabelregel.element3911.Waarde, tabelregel);
@@ -381,7 +384,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 		private Tabel60()
 		{
 			Tabelregels = new Dictionary<Int16, Tabelregel60>();
-			foreach (var rgl in System.IO.File.ReadLines(@"csv\Tabel60.csv"))
+			foreach (var rgl in System.IO.File.ReadLines(@"..\..\..\..\ResourceLayer.Brp\DomainModel\LogischOntwerp\LandelijkeTabellen\csv\Tabel60.csv").Skip(1))
 			{
 				var tabelregel = new Tabelregel60(rgl.Replace($"\",\"", "•").Replace($"\"", string.Empty).Replace($"\r", string.Empty).Replace($"\n", string.Empty));
 				Tabelregels.Add(tabelregel.element8811.Waarde, tabelregel);
@@ -413,7 +416,7 @@ namespace Centric.PIV.Burgerzaken.RaadplegenPL.ResourceLayer.Brp.DomainModel.Log
 		private Tabel61()
 		{
 			Tabelregels = new Dictionary<String, Tabelregel61>();
-			foreach (var rgl in System.IO.File.ReadLines(@"csv\Tabel61.csv"))
+			foreach (var rgl in System.IO.File.ReadLines(@"..\..\..\..\ResourceLayer.Brp\DomainModel\LogischOntwerp\LandelijkeTabellen\csv\Tabel61.csv").Skip(1))
 			{
 				var tabelregel = new Tabelregel61(rgl.Replace($"\",\"", "•").Replace($"\"", string.Empty).Replace($"\r", string.Empty).Replace($"\n", string.Empty));
 				Tabelregels.Add(tabelregel.element3211.Waarde, tabelregel);
