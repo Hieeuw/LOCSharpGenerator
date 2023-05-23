@@ -54,7 +54,7 @@ namespace pdfreader
             var dir = Environment.CurrentDirectory;
             Console.WriteLine("Generating content from LogischOntwerpBRP4.2.pdf...");
             RaadplegenPLSourceGenerator.LogischOntwerpReader reader = new RaadplegenPLSourceGenerator.LogischOntwerpReader("../../LogischOntwerp/LO/Current/LogischOntwerpBRP4.2.pdf"
-                , @"C:\Git\Repos\BZ.Pkg.RaadplegenPL\ResourceLayer.Brp\DomainModel\LogischOntwerp");
+                , @"C:\Git\Repos\BZ\BZ.Pkg.RaadplegenPL\ResourceLayer.Brp\DomainModel\LogischOntwerp");
             //Console.WriteLine("Zipping..");
             //My7Zip.CreateZipFolder("../../LogischOntwerp", "../../LogischOntwerp.zip");
             Console.WriteLine("Done!");

@@ -232,10 +232,77 @@ namespace pdfreader
             sb.Append($"\tpublic class Categorie{Nummer} : Categorie{Nummer}Base, IHistorie\r\n");
             sb.Append($"\t{{\r\n");
             sb.Append($"\t\tpublic IList<Categorie{Convert.ToInt32(Nummer) + 50}> Historie {{ get; set; }}\r\n\r\n");
+            sb.Append($"{this._DefaultConstructorActueel()}");
             sb.Append($"{_Constructor()}");
             sb.Append($"\t}}\r\n\r\n");
             return sb.ToString();
         }
+
+
+
+
+        public string _DefaultConstructorActueel()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            //  schrijf header
+            sb.Append($"\t\t/// <summary>\r\n");
+            sb.Append($"\t\t/// Default constructor Categorie{Nummer}\r\n");
+            sb.Append($"\t\t/// </summary>\r\n");
+            sb.Append($"\t\tpublic Categorie{Nummer}()\r\n");
+            sb.Append($"\t\t{{\r\n");
+            foreach (var grp in this.Groepsopsomming.Where(g => g.Nummer != "84"))
+            {
+                sb.Append($"\t\t\tgroep{grp.Nummer} = new Groep{grp.Nummer}();\r\n");
+            }
+
+            if (this.HeeftHistorie)
+                sb.Append($"\r\n\t\t\tHistorie = new List<Categorie{Convert.ToInt16(Nummer)+50}>();\r\n");
+
+            sb.Append($"\t\t}}\r\n\r\n");
+            return sb.ToString();
+
+        }
+
+        public string _DefaultConstructorActueelNoHistorie()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            //  schrijf header
+            sb.Append($"\t\t/// <summary>\r\n");
+            sb.Append($"\t\t/// Default constructor Categorie{Nummer}\r\n");
+            sb.Append($"\t\t/// </summary>\r\n");
+            sb.Append($"\t\tpublic Categorie{Nummer}()\r\n");
+            sb.Append($"\t\t{{\r\n");
+            foreach (var grp in this.Groepsopsomming)
+                sb.Append($"\t\t\tgroep{grp.Nummer} = new Groep{grp.Nummer}();\r\n");
+
+            sb.Append($"\t\t}}\r\n\r\n");
+            return sb.ToString();
+
+        }
+
+
+        public string _DefaultConstructorHistorie()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            //  schrijf header
+            sb.Append($"\t\t/// <summary>\r\n");
+            sb.Append($"\t\t/// Default constructor Categorie{Nummer+50}\r\n");
+            sb.Append($"\t\t/// </summary>\r\n");
+            sb.Append($"\t\tpublic Categorie{Convert.ToInt16(Nummer) + 50}()\r\n");
+            sb.Append($"\t\t{{\r\n");
+            foreach (var grp in this.Groepsopsomming)
+                sb.Append($"\t\t\tgroep{grp.Nummer} = new Groep{grp.Nummer}();\r\n");
+
+
+            sb.Append($"\t\t}}\r\n\r\n");
+            return sb.ToString();
+
+        }
+
+
 
         public string _Constructor()
         {
@@ -287,8 +354,9 @@ namespace pdfreader
             sb.Append($"\t/// </summary>\r\n");
             sb.Append($"\t[ExcludeFromCodeCoverage]\r\n");
             sb.Append($"\tpublic class Categorie{Nummer} : Categorie{Nummer}Base\r\n");
-            sb.Append($"\t{{\r\n\t}}\r\n\r\n");
-
+            sb.Append($"\t{{\r\n");
+            sb.Append($"{this._DefaultConstructorActueelNoHistorie()}\r\n");
+            sb.Append($"\t}}\r\n\r\n");
             return sb.ToString();
         }
 
@@ -301,13 +369,15 @@ namespace pdfreader
             sb.Append($"\t/// Representeert Categorie{Convert.ToInt32(Nummer) + 50} (Historie {Naam})\r\n");
             sb.Append($"\t/// </summary>\r\n");
             sb.Append($"\t[ExcludeFromCodeCoverage]\r\n");
-            sb.Append($"\tpublic abstract class Categorie{Convert.ToInt32(Nummer) + 50} : Categorie{Nummer}Base\r\n\t{{\r\n");
+            sb.Append($"\tpublic class Categorie{Convert.ToInt32(Nummer) + 50} : Categorie{Nummer}Base\r\n\t{{\r\n");
             sb.Append($"\t\t/// <summary>\r\n");
             sb.Append($"\t\t/// Representeert Groep 84 (Onjuist)\r\n");
             sb.Append($"\t\t/// </summary>\r\n");
             sb.Append($"\t\t[JsonProperty(\"Onjuist\")]\r\n");
 
-            sb.Append($"\t\tpublic Groep84 groep84 {{ get; set; }}\r\n\t}}\r\n\r\n");
+            sb.Append($"\t\tpublic Groep84 groep84 {{ get; set; }}\r\n");
+            sb.Append($"{this._DefaultConstructorHistorie()}");
+            sb.Append($"\t}}\r\n\r\n");
             return sb.ToString();
         }
     }
